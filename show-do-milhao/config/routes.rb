@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subjects, :path => 'assuntos'
   resources :questions, :path => 'questoes'
   resources :answers, :path => 'respostas'
 

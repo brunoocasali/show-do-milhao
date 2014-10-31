@@ -15,6 +15,7 @@ class AnswersController < ApplicationController
   # GET /answers/new
   def new
     @answer = Answer.new
+    @subjects = Subject.all
   end
 
   # GET /answers/1/edit
@@ -69,6 +70,6 @@ class AnswersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
-      params.require(:answer).permit(:title)
+      params.require(:answer).permit(:title, :subject_id)
     end
 end

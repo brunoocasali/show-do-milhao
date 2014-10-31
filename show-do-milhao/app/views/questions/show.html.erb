@@ -2,22 +2,22 @@
 
 <p>
   <strong>Descricao:</strong>
-  <%= @question.descricao %>
+  <%= @question.description %>
 </p>
 
-<p>
-  <strong>Correct answer:</strong>
-  <%= @question.correct_answer %>
-</p>
+<!--<p>-->
+  <!--<strong>Correct answer:</strong>-->
+  <!--<%#= @question.correct_answer %>-->
+<!--</p>-->
 
 <p>
   <strong>Answer:</strong>
-  <%= @question.answer %>
+  <%= @question.correct_answer.title %>
 </p>
 
 <p>
   <strong>Subject:</strong>
-  <%= @question.subject %>
+  <%= @question.subject.title %>
 </p>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
