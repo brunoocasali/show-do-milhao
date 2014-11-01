@@ -20,6 +20,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
+    @subjects = Subject.all
   end
 
   # POST /questions
@@ -70,6 +71,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:descricao, :correct_answer_id, :answer_id, :subject_id)
+      params.require(:question).permit(:description, :correct_answer_id, :answer_id, :subject_id)
     end
 end

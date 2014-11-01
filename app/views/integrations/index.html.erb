@@ -1,0 +1,17 @@
+Listar as questões....
+tudo baseado no assunto
+Listar as respostas...
+<%= form_for :integration, :url => {:controller => :integrations, :action => :index } do |f| %>
+    <%= f.select :test, options_for_select([['Select', ''], ['Arts'], ['Vocational']], @answers)  %>
+    <%= f.select :subject_id, @subjects.collect{|sub| [sub.title, sub.id]}, { },
+                 {required: true} %>
+
+<% end %>
+
+<script>
+    $(function(){
+        $('select').live('change',function() {
+            $(this).closest('form#index').submit();
+        });
+    });
+</script>

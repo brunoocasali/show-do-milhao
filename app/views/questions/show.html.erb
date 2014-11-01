@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricão:</strong>
+  <%= @question.description %>
+</p>
+
+<p>
+  <strong>Resposta certa:</strong>
+  <%= @question.correct_answer.title unless @question.correct_answer.blank? %>
+</p>
+
+<p>
+  <strong>Assunto:</strong>
+  <%= @question.subject.title %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
