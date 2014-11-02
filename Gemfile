@@ -38,3 +38,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Devise for logins (facebook oauth)
+gem 'devise'
+
+# Facebook provider.
+gem 'omniauth-facebook'
