@@ -15731,3 +15731,1757 @@ Migrating to CreateUsers (20141102122550)
   [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141102122550')
   [1m[36m (48.4ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (113.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (244.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateAnswers (20141031220840)
+  [1m[35m (117.6ms)[0m  CREATE TABLE `answers` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031220840')
+  [1m[36m (95.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuestions (20141031220949)
+  [1m[35m (120.1ms)[0m  CREATE TABLE `questions` (`id` int(11) auto_increment PRIMARY KEY, `description` text, `correct_answer_id` int(11), `subject_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (278.2ms)[0m  [1mCREATE  INDEX `index_questions_on_correct_answer_id`  ON `questions` (`correct_answer_id`) [0m
+  [1m[35m (223.8ms)[0m  CREATE  INDEX `index_questions_on_subject_id`  ON `questions` (`subject_id`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031220949')
+  [1m[36m (41.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSubjects (20141031222821)
+  [1m[35m (98.4ms)[0m  CREATE TABLE `subjects` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031222821')
+  [1m[36m (41.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddQuestionToAnswers (20141031224057)
+  [1m[35m (233.2ms)[0m  ALTER TABLE `answers` ADD `question_id` int(11)
+  [1m[36m (221.6ms)[0m  [1mCREATE  INDEX `index_answers_on_question_id`  ON `answers` (`question_id`) [0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141031224057')[0m
+  [1m[35m (41.8ms)[0m  COMMIT
+Migrating to AddSubjectToAnswers (20141031230158)
+  [1m[36m (253.1ms)[0m  [1mALTER TABLE `answers` ADD `subject_id` int(11)[0m
+  [1m[35m (221.6ms)[0m  CREATE  INDEX `index_answers_on_subject_id`  ON `answers` (`subject_id`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031230158')
+  [1m[36m (52.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20141102122550)
+  [1m[35m (120.8ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `image` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141102122550')
+  [1m[36m (53.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnsToUsers (20141102122617)
+  [1m[35m (322.0ms)[0m  ALTER TABLE `users` ADD `provider` varchar(255)
+  [1m[36m (246.8ms)[0m  [1mALTER TABLE `users` ADD `uid` varchar(255)[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141102122617')[0m
+  [1m[35m (41.9ms)[0m  COMMIT
+Migrating to DeviseCreateUsers (20141103013739)
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+Mysql2::Error: Table 'users' already exists: CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (121.7ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (288.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateAnswers (20141031220840)
+  [1m[35m (113.0ms)[0m  CREATE TABLE `answers` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031220840')
+  [1m[36m (65.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuestions (20141031220949)
+  [1m[35m (99.0ms)[0m  CREATE TABLE `questions` (`id` int(11) auto_increment PRIMARY KEY, `description` text, `correct_answer_id` int(11), `subject_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (188.7ms)[0m  [1mCREATE  INDEX `index_questions_on_correct_answer_id`  ON `questions` (`correct_answer_id`) [0m
+  [1m[35m (221.8ms)[0m  CREATE  INDEX `index_questions_on_subject_id`  ON `questions` (`subject_id`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031220949')
+  [1m[36m (41.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSubjects (20141031222821)
+  [1m[35m (98.6ms)[0m  CREATE TABLE `subjects` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031222821')
+  [1m[36m (41.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddQuestionToAnswers (20141031224057)
+  [1m[35m (299.8ms)[0m  ALTER TABLE `answers` ADD `question_id` int(11)
+  [1m[36m (232.9ms)[0m  [1mCREATE  INDEX `index_answers_on_question_id`  ON `answers` (`question_id`) [0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141031224057')[0m
+  [1m[35m (52.2ms)[0m  COMMIT
+Migrating to AddSubjectToAnswers (20141031230158)
+  [1m[36m (255.8ms)[0m  [1mALTER TABLE `answers` ADD `subject_id` int(11)[0m
+  [1m[35m (221.5ms)[0m  CREATE  INDEX `index_answers_on_subject_id`  ON `answers` (`subject_id`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031230158')
+  [1m[36m (41.8ms)[0m  [1mCOMMIT[0m
+Migrating to DeviseCreateUsers (20141103013739)
+  [1m[35m (110.7ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `name` varchar(255), `image` varchar(255), `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (210.9ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (221.8ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) 
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141103013739')
+  [1m[36m (53.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAuthentications (20141103014018)
+  [1m[35m (122.6ms)[0m  CREATE TABLE `authentications` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `provider` varchar(255), `uid` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141103014018')
+  [1m[36m (53.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (125.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (610.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateAuthorizations (20141003184759)
+  [1m[35m (125.1ms)[0m  CREATE TABLE `authorizations` (`id` int(11) auto_increment PRIMARY KEY, `provider` varchar(255), `uid` varchar(255), `user_id` int(11), `token` varchar(255), `secret` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141003184759')
+  [1m[36m (52.8ms)[0m  [1mCOMMIT[0m
+Migrating to AddUsernameToAuthorization (20141006144449)
+  [1m[35m (268.3ms)[0m  ALTER TABLE `authorizations` ADD `username` varchar(255)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141006144449')
+  [1m[36m (41.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAnswers (20141031220840)
+  [1m[35m (109.3ms)[0m  CREATE TABLE `answers` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031220840')
+  [1m[36m (42.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateQuestions (20141031220949)
+  [1m[35m (98.3ms)[0m  CREATE TABLE `questions` (`id` int(11) auto_increment PRIMARY KEY, `description` text, `correct_answer_id` int(11), `subject_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (266.3ms)[0m  [1mCREATE  INDEX `index_questions_on_correct_answer_id`  ON `questions` (`correct_answer_id`) [0m
+  [1m[35m (199.4ms)[0m  CREATE  INDEX `index_questions_on_subject_id`  ON `questions` (`subject_id`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031220949')
+  [1m[36m (42.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSubjects (20141031222821)
+  [1m[35m (109.3ms)[0m  CREATE TABLE `subjects` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031222821')
+  [1m[36m (41.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddQuestionToAnswers (20141031224057)
+  [1m[35m (255.7ms)[0m  ALTER TABLE `answers` ADD `question_id` int(11)
+  [1m[36m (221.7ms)[0m  [1mCREATE  INDEX `index_answers_on_question_id`  ON `answers` (`question_id`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141031224057')[0m
+  [1m[35m (53.3ms)[0m  COMMIT
+Migrating to AddSubjectToAnswers (20141031230158)
+  [1m[36m (301.4ms)[0m  [1mALTER TABLE `answers` ADD `subject_id` int(11)[0m
+  [1m[35m (199.6ms)[0m  CREATE  INDEX `index_answers_on_subject_id`  ON `answers` (`subject_id`) 
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141031230158')
+  [1m[36m (41.7ms)[0m  [1mCOMMIT[0m
+Migrating to DeviseCreateUsers (20141103013739)
+  [1m[35m (108.4ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `name` varchar(255), `image` varchar(255), `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (210.4ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (199.5ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141103013739')
+  [1m[36m (52.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-03 01:24:01 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1458ms (Views: 1430.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:24:02 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:24:03 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:24:03 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:03 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:24:03 -0200
+
+
+Started GET "/users/" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:07 -0200
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-11-03 01:26:10 -0200
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (125.7ms)
+  Rendered users/new.html.erb within layouts/application (156.2ms)
+Completed 200 OK in 172ms (Views: 168.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-11-03 01:26:12 -0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 01:26:15 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (4.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (139.5ms)
+Completed 200 OK in 162ms (Views: 153.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:26:16 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:26:17 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:26:17 -0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQCdE4tKhEJksUhLUzVZcuKUh6ldcgdGFAY9AwgsYdCbUx2Xnz5_RUav6hKw6pOSjNZz6uUHqiaVnuuIWnqYHkWHIYePUf6I2Vzu-mExoA3jPaibCVsBot2gq78b2LxjAdv5w7YQwEnDaB_urSKxaA3bISdZGGJ4mBlqYZigK1Tc8owl6Vn-BD7K0JcBu2WWDoaqWWR9axGUWa9KYBYFxOBaF_wvjq83ZPkX4z6kY5zwOWP1NEXX1LuXmWSci4uJ1Eu4qXpIPD3pKZXP8WaTixrstnoiSP8z3J_knSQhG8YDZfqOrtBDczrqWKMS80YmdsOWh5nIyRpwAjgHI6cLMg5H&state=e7513d8895be44930e4b80beade2ac50724fab3d17303abe" for 127.0.0.1 at 2014-11-03 01:30:40 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCdE4tKhEJksUhLUzVZcuKUh6ldcgdGFAY9AwgsYdCbUx2Xnz5_RUav6hKw6pOSjNZz6uUHqiaVnuuIWnqYHkWHIYePUf6I2Vzu-mExoA3jPaibCVsBot2gq78b2LxjAdv5w7YQwEnDaB_urSKxaA3bISdZGGJ4mBlqYZigK1Tc8owl6Vn-BD7K0JcBu2WWDoaqWWR9axGUWa9KYBYFxOBaF_wvjq83ZPkX4z6kY5zwOWP1NEXX1LuXmWSci4uJ1Eu4qXpIPD3pKZXP8WaTixrstnoiSP8z3J_knSQhG8YDZfqOrtBDczrqWKMS80YmdsOWh5nIyRpwAjgHI6cLMg5H", "state"=>"e7513d8895be44930e4b80beade2ac50724fab3d17303abe"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 01:30:40 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:41 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:30:43 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:30:43 -0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQDX1mBjFX1jeHP8fC5dg0W4q6rU8Btm36YfsSYg0uorrY0FqYpMYl3RS54x3wS4CgZOE_O5mc44ig5sf2CHrlSve7TscEpTETptbI5U35ZbL8vvCffiSGvnmmt0xdCNhYBtVKEXlP_2NwL84zg-RSvWiva4o4_VuloCvaRctBYGdtgJQaYxKV15lYhD93jC5u0lXaPtNEFfxEzX-i-XEboUKsSzPh41TRUpe5XWT9PFHsiznQHdzBP23snc8UFKZpblD3SjOAyM-0N-IVN6uUeO_NveSE-qHfgpRI3V8VhjCGCmxpwZqazW4DwsXNwySdyRTw7NodpWHwNhmjUzpAAK&state=463faa64b28d6fec5fc16096ff2f2f8354fd5bc85f0a8418" for 127.0.0.1 at 2014-11-03 01:30:43 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDX1mBjFX1jeHP8fC5dg0W4q6rU8Btm36YfsSYg0uorrY0FqYpMYl3RS54x3wS4CgZOE_O5mc44ig5sf2CHrlSve7TscEpTETptbI5U35ZbL8vvCffiSGvnmmt0xdCNhYBtVKEXlP_2NwL84zg-RSvWiva4o4_VuloCvaRctBYGdtgJQaYxKV15lYhD93jC5u0lXaPtNEFfxEzX-i-XEboUKsSzPh41TRUpe5XWT9PFHsiznQHdzBP23snc8UFKZpblD3SjOAyM-0N-IVN6uUeO_NveSE-qHfgpRI3V8VhjCGCmxpwZqazW4DwsXNwySdyRTw7NodpWHwNhmjUzpAAK", "state"=>"463faa64b28d6fec5fc16096ff2f2f8354fd5bc85f0a8418"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:30:44 -0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 174ms (Views: 133.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:18 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:19 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:19 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:19 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:19 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:19 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:19 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:19 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:19 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:19 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:19 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:33:20 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:33:20 -0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQCvbNfEMsDxPN7aTKlrKTOWy6NfgLyux_YN3INiubQP-ttt6mUYtVcXjRf5H8ZzE7ruQRgiiIpIrzn2qsA0w4SYkaMLq_rZRZBk1ZxLL_FxH396zydKbqttjBy6j_DbpzN1lDRa2qZmOSpyxCw1mepPyV0WmVyUfIa8b_oEkooCFqJXlQ-uIhJN7ZrlnBEV38LS8p3T_pfutvuV8K4Thy3NPsyAxIOn2LrXMx5gcmDr8m3ngsjenYFRPApi5kAWSXgTM47MBippnU7_QVof8HVegeP5vfTIFY7wEddHXFSzIlq4ec2eM3aLqas-q2YTIlGkdW2f-KP1_YhC0D9L04EA&state=52ca0f20bcdab711c5066ff6dc97c485bc2c8bcf37761e58" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCvbNfEMsDxPN7aTKlrKTOWy6NfgLyux_YN3INiubQP-ttt6mUYtVcXjRf5H8ZzE7ruQRgiiIpIrzn2qsA0w4SYkaMLq_rZRZBk1ZxLL_FxH396zydKbqttjBy6j_DbpzN1lDRa2qZmOSpyxCw1mepPyV0WmVyUfIa8b_oEkooCFqJXlQ-uIhJN7ZrlnBEV38LS8p3T_pfutvuV8K4Thy3NPsyAxIOn2LrXMx5gcmDr8m3ngsjenYFRPApi5kAWSXgTM47MBippnU7_QVof8HVegeP5vfTIFY7wEddHXFSzIlq4ec2eM3aLqas-q2YTIlGkdW2f-KP1_YhC0D9L04EA", "state"=>"52ca0f20bcdab711c5066ff6dc97c485bc2c8bcf37761e58"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:21 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:22 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:22 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:22 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:22 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:22 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:33:23 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:33:23 -0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQCr2zcr2pcRst1u6lJPI48ia1Qeu3yEhpJWZyGqOYLwSY8HgzFd_irVMa8MOQO0uxSdZRDWpWaHGRZ_4RaD6BwS-Nk3euCTUi8QBU1QPUl8ie8ohfKA6sPyYzX39VOMGdzXG7QrQzaqplbd-ANtqcj6fVX1zJjzf-X-20WhCsbd3klpC9Xw1TAj7pXXh3qRl7x4yWkM6REMJskSrRHUE9HEWFkr810UDjVYzaRXKv2gcO6yy8ryH4db2_EXMMXEM5atSXa1_qeCzE7K6tnuteeoTzWGHhsp6_v7Nsuuf0xuTMMMqCHJJ6GrwOQu1ffL_MuxTwEwQYXYnhn5Cv92ZuNm&state=b3b6c23555a328beac76752133b6ad992a3def30f2d0baaa" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCr2zcr2pcRst1u6lJPI48ia1Qeu3yEhpJWZyGqOYLwSY8HgzFd_irVMa8MOQO0uxSdZRDWpWaHGRZ_4RaD6BwS-Nk3euCTUi8QBU1QPUl8ie8ohfKA6sPyYzX39VOMGdzXG7QrQzaqplbd-ANtqcj6fVX1zJjzf-X-20WhCsbd3klpC9Xw1TAj7pXXh3qRl7x4yWkM6REMJskSrRHUE9HEWFkr810UDjVYzaRXKv2gcO6yy8ryH4db2_EXMMXEM5atSXa1_qeCzE7K6tnuteeoTzWGHhsp6_v7Nsuuf0xuTMMMqCHJJ6GrwOQu1ffL_MuxTwEwQYXYnhn5Cv92ZuNm", "state"=>"b3b6c23555a328beac76752133b6ad992a3def30f2d0baaa"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:24 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:33:26 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:33:27 -0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQD6r9r9He1ZOQyksi5mdMdeDSDFr6Lc6C6MIHpXat3Q72PPxnxUzDw7EfphzvzNJE6hKpzby9IKq21sYjj73xisTMH6xy-UzfVM4yub6hZkoFFZ-NQUCDVmdSTjeMxwK3gYwyZHZZ-XVM-fvqiBKddxfzpvLN3nUe3N46QiHe_thIF9seEvDQJU6DIP7pxmaaOVIOicyYfvliN8vOppX5tDdM3ZMtDIb8KQcN1XdQ0muW9vBOe_h0fjNevY72J9yJlotTmGC-XCaQ4EoEcIs3CjNap3AWRoCyWUiQcN4fC6f0-chfdKTI__BZFaL05bv5FwhXVu0zlFI8U9tieekpjC&state=ebc8c8209feaed51518a50c8982fb994bcbe73ae945a2d1b" for 127.0.0.1 at 2014-11-03 01:33:27 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQD6r9r9He1ZOQyksi5mdMdeDSDFr6Lc6C6MIHpXat3Q72PPxnxUzDw7EfphzvzNJE6hKpzby9IKq21sYjj73xisTMH6xy-UzfVM4yub6hZkoFFZ-NQUCDVmdSTjeMxwK3gYwyZHZZ-XVM-fvqiBKddxfzpvLN3nUe3N46QiHe_thIF9seEvDQJU6DIP7pxmaaOVIOicyYfvliN8vOppX5tDdM3ZMtDIb8KQcN1XdQ0muW9vBOe_h0fjNevY72J9yJlotTmGC-XCaQ4EoEcIs3CjNap3AWRoCyWUiQcN4fC6f0-chfdKTI__BZFaL05bv5FwhXVu0zlFI8U9tieekpjC", "state"=>"ebc8c8209feaed51518a50c8982fb994bcbe73ae945a2d1b"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:28 -0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:31 -0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:33 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:33:35 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:33:35 -0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQA8707ruOxPqzraELEa1z8OKnB_cgf2uXpJCBQ6GS54SIeSPgD3wb3T_j5DZeXo1qeqx5nQVjMPQX5JfL9cba62xP61810UVt1cNdZs9QWGtfkMQ7uQZMqXdajHrQxd9wXYXCShQ9PzdwCbhXZQqeqllhfiT8gyfzhBMjwJRe7dcQTRzJWALmKbG4M4XJ8nbqGIMWqDYbblaU8fC6a5KeHL6aDpCn298dlgxPRITj248wUMTja67Pq0XZSnKKPdvAUAFfT6jFDRTCBNbwUIQ2wjZrVHum4BgS-zuwEdfXWBFLAbuEeDeH4jSxCmqdOP6D9woQEvfHRazYKDkyI6FlS7&state=e015c4f6dd17be4a5459149febf78de28d0475337489d0e1" for 127.0.0.1 at 2014-11-03 01:33:35 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQA8707ruOxPqzraELEa1z8OKnB_cgf2uXpJCBQ6GS54SIeSPgD3wb3T_j5DZeXo1qeqx5nQVjMPQX5JfL9cba62xP61810UVt1cNdZs9QWGtfkMQ7uQZMqXdajHrQxd9wXYXCShQ9PzdwCbhXZQqeqllhfiT8gyfzhBMjwJRe7dcQTRzJWALmKbG4M4XJ8nbqGIMWqDYbblaU8fC6a5KeHL6aDpCn298dlgxPRITj248wUMTja67Pq0XZSnKKPdvAUAFfT6jFDRTCBNbwUIQ2wjZrVHum4BgS-zuwEdfXWBFLAbuEeDeH4jSxCmqdOP6D9woQEvfHRazYKDkyI6FlS7", "state"=>"e015c4f6dd17be4a5459149febf78de28d0475337489d0e1"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:33:36 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:39 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:39 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:39 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:39 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:33:39 -0200
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 174ms (Views: 147.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:02 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:03 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:03 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:03 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:03 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:03 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:03 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:03 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:03 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:34:05 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 01:34:05 -0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQB8ayagPQAiEkv4FV56fVG0_J3uWxsODbq1Qz-K6m53YsxnWFI8iyBdxPaF10IbYgcHU0lMYtJGmu0NHGTCHfriGKDQ2xnROyrV4g_mGX4qdj-MlBeMlx7dbZXKB1a4yINuNghrjfe8NPkfmXF0zfMkwfR7I-0j6jqtBE-LGygJdDeFF1eRsU3GhIR8brvNL1PuKg2WHmdUuJf97ZjRuQZZi4rXQI7AFELIsDP5OhAdfZJ_547XBMABax9gFip-3SQfqfXMe1pF_7L4jo29zdaksDQIPlLx1JjEUUUbE8Wfexowivl4RWlihESEHhmqT9aItstoB8mmeY2niiEpE9lB&state=848ddcc5228ed1208e2b4e7cdd3644cfd0b5d382cd7b38da" for 127.0.0.1 at 2014-11-03 01:34:05 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQB8ayagPQAiEkv4FV56fVG0_J3uWxsODbq1Qz-K6m53YsxnWFI8iyBdxPaF10IbYgcHU0lMYtJGmu0NHGTCHfriGKDQ2xnROyrV4g_mGX4qdj-MlBeMlx7dbZXKB1a4yINuNghrjfe8NPkfmXF0zfMkwfR7I-0j6jqtBE-LGygJdDeFF1eRsU3GhIR8brvNL1PuKg2WHmdUuJf97ZjRuQZZi4rXQI7AFELIsDP5OhAdfZJ_547XBMABax9gFip-3SQfqfXMe1pF_7L4jo29zdaksDQIPlLx1JjEUUUbE8Wfexowivl4RWlihESEHhmqT9aItstoB8mmeY2niiEpE9lB", "state"=>"848ddcc5228ed1208e2b4e7cdd3644cfd0b5d382cd7b38da"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 01:34:06 -0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-03 21:45:00 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 335ms (Views: 301.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:00 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:00 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:00 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:00 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:01 -0200
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (4.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (192.9ms)
+Completed 200 OK in 262ms (Views: 227.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 21:45:10 -0200
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-11-03 21:45:13 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-11-03 21:45:43 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-11-03 21:46:13 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-11-03 21:46:43 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 21:47:13 -0200
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2014-11-03 21:47:13 -0200
+
+
+Started GET "/users/auth/facebook/callback?code=AQCbKfiwHwJYi4UB7IXiQj4_lef3lRSV_ivjmrZ7Od0se0L9rB9zPh8gXVLs2D-X6WqrG5EJ6dT7d2WBC6JLKlM3VZNSD2rrUARdFRjRUuxwgQXHxpdlJqOyde3f98KYKdzsY-pLUrW8YEziDy84R1fnkq7mt0z3wX9zHTcLlYygt912CMuwrYlm0cn5H9YMx9Atwv4qMWSsozRWt4GwDe4G0tdmZKogw4lyZnlKSmQHCy7JRQ6ajyswpWkbdKiKTvyKi-7YKk5aUlI-VFMF2iIgIs52q4TqdJep_2N54XQUbDjyPkM7XdvKWUCom4QONHP3paszeHv_ND7GgV9RzinE&state=b1e388b812077284b2e9816ec9e1d41a86633b54ade7b1b5" for 127.0.0.1 at 2014-11-03 21:47:23 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCbKfiwHwJYi4UB7IXiQj4_lef3lRSV_ivjmrZ7Od0se0L9rB9zPh8gXVLs2D-X6WqrG5EJ6dT7d2WBC6JLKlM3VZNSD2rrUARdFRjRUuxwgQXHxpdlJqOyde3f98KYKdzsY-pLUrW8YEziDy84R1fnkq7mt0z3wX9zHTcLlYygt912CMuwrYlm0cn5H9YMx9Atwv4qMWSsozRWt4GwDe4G0tdmZKogw4lyZnlKSmQHCy7JRQ6ajyswpWkbdKiKTvyKi-7YKk5aUlI-VFMF2iIgIs52q4TqdJep_2N54XQUbDjyPkM7XdvKWUCom4QONHP3paszeHv_ND7GgV9RzinE", "state"=>"b1e388b812077284b2e9816ec9e1d41a86633b54ade7b1b5"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:33 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 21:49:34 -0200
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-11-03 21:55:01 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 21:55:31 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-11-03 21:55:31 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 21:56:01 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:01 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:01 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-03 21:56:01 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-03 21:56:01 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-03 21:56:01 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-03 21:56:01 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-03 21:56:01 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-03 21:56:01 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-03 21:56:02 -0200
+
+
+Started GET "/users/auth/twitter" for 127.0.0.1 at 2014-11-03 21:56:11 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-11-03 21:56:41 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.0ms)
