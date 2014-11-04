@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :games
 
-  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+  devise_for :players, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
-  resources :users
+  resources :games, :path => 'jogos'
+  resources :players, :path => 'jogadores'
   resources :subjects, :path => 'assuntos'
   resources :questions, :path => 'questoes'
   resources :answers, :path => 'respostas'
