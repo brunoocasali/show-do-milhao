@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103013739) do
+ActiveRecord::Schema.define(version: 20141104023058) do
 
   create_table "answers", force: true do |t|
     t.string   "title"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 20141103013739) do
     t.datetime "updated_at"
     t.string   "username"
   end
+
+  create_table "games", force: true do |t|
+    t.integer  "user_id"
+    t.decimal  "worth",      precision: 10, scale: 2
+    t.string   "image"
+    t.boolean  "winner",                              default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "games", ["user_id"], name: "index_games_on_user_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.text     "description"

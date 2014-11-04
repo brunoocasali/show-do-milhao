@@ -2,4 +2,5 @@
     <h1>Olá! Faça login :D</h1>
 <% else %>
     <h1>Welcomeee Guardian: <%= current_user.name %></h1>
+    <%= link_to 'Sair!', destroy_user_session_path %>
 <% end %>
