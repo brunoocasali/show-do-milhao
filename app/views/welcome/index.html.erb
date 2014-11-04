@@ -1,1 +1,5 @@
-<h1>Olá! Faça login :D</h1>
+<% if current_user.blank? %>
+    <h1>Olá! Faça login :D</h1>
+<% else %>
+    <h1>Welcomeee Guardian: <%= current_user.name %></h1>
+<% end %>

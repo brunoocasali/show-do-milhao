@@ -28,8 +28,8 @@ Devise.setup do |config|
                   {scope: 'email, offline_access', provider_ignores_state: true,
                    client_options: {ssl: {ca_file: '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 
-  config.omniauth :twitter,  '1961188398-IoYKJQxqiwqmcVyIuUqMATyiGzBwpmqPDTCF2de',
-                  'Li1uOV9RauWw9z2TKvtRwlMMkSaLpcRrEdg9DOJ5NVTb0',
+  config.omniauth :twitter,  'Y2RZXSgv8gLY3kccA0fE5v6M7',
+                  'rGJjkp5VwJgik2sQKYBEpAW5YGS9I6jWfvxYxZLG6M2NNYyLuq',
                   {:scope => 'r_fullprofile, r_emailaddress', :client_options =>
                       {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 
