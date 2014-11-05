@@ -1,9 +1,31 @@
-<p id="notice"><%= notice %></p>
+<h2>Visualizando resposta: <%= params[:id] %> </h2> <br />
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="portlet-content">
+      <% unless notice.blank? %>
+          <div class="alert alert-success alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <strong>Hey!</strong> Parabéns você cadastrou uma resposta com sucesso!
+          </div>
+      <% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @answer.title %>
-</p>
+      <p>
+        <strong>Title:</strong>
+        <%= @answer.title %>
+      </p>
 
-<%= link_to 'Edit', edit_answer_path(@answer) %> |
-<%= link_to 'Back', answers_path %>
+      <p>
+        <strong>Assunto:</strong>
+        <%= @answer.subject.title %>
+      </p>
+    </div>
+    <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Alterar'),
+                edit_answer_path(@answer), class: 'btn btn-warning white' %>
+
+    <%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span> Voltar'),
+                answers_path, class: 'btn btn-primary pull-right white' %>
+  </div>
+</div>

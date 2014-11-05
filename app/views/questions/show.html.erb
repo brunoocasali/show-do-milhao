@@ -1,19 +1,36 @@
-<p id="notice"><%= notice %></p>
+<h2>Visualizando questão: <%= params[:id] %> </h2> <br />
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="portlet-content">
+      <% unless notice.blank? %>
+          <div class="alert alert-success alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <strong>Hey!</strong> Parabéns você cadastrou uma questão com sucesso!
+          </div>
+      <% end %>
 
-<p>
-  <strong>Descricão:</strong>
-  <%= @question.description %>
-</p>
+      <p>
+        <strong>Descricão:</strong>
+        <%= @question.description %>
+      </p>
 
-<p>
-  <strong>Resposta certa:</strong>
-  <%= @question.correct_answer.title unless @question.correct_answer.blank? %>
-</p>
+      <p>
+        <strong>Resposta certa:</strong>
+        <%= @question.correct_answer.title unless @question.correct_answer.blank? %>
+      </p>
 
-<p>
-  <strong>Assunto:</strong>
-  <%= @question.subject.title %>
-</p>
+      <p>
+        <strong>Assunto:</strong>
+        <%= @question.subject.title %>
+      </p>
+    </div>
+    <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Alterar'),
+                edit_answer_path(@question), class: 'btn btn-warning white' %>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+    <%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span> Voltar'),
+                questions_path, class: 'btn btn-primary pull-right white' %>
+  </div>
+</div>

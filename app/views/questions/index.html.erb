@@ -23,15 +23,21 @@
             <tbody>
             <% @questions.each do |question| %>
                 <tr>
-                  <td><%= question.description %></td>
+                  <td><%= truncate question.description, length: 180 %></td>
                   <td><%= question.correct_answer.title unless question.correct_answer.blank? %></td>
                   <td><%= question.subject.title %></td>
-                  <td><%= link_to 'Exibir', question, class: 'btn btn-primary center-block' %></td>
-                  <td><%= link_to 'Alterar', edit_question_path(question),
-                                  class: 'btn btn-primary center-block' %></td>
-                  <td><%= link_to 'Deletar', question, method: :delete,
-                                  data: { confirm: 'Você tem certeza?' },
-                                  class: 'btn btn-primary center-block' %></td>
+                  <td>
+                    <%= link_to 'Exibir', question, class: 'btn btn-primary center-block white' %>
+                  </td>
+                  <td>
+                    <%= link_to 'Alterar', edit_question_path(question),
+                                class: 'btn btn-primary center-block white' %>
+                  </td>
+                  <td>
+                    <%= link_to 'Deletar', question, method: :delete,
+                                data: { confirm: 'Você tem certeza?' },
+                                class: 'btn btn-danger center-block white' %>
+                  </td>
                 </tr>
             <% end %>
             </tbody>

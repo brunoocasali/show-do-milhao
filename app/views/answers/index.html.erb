@@ -24,15 +24,15 @@
                 <tr>
                   <td><%= answer.title %></td>
                   <td><%= answer.subject.title %></td>
-                  <td><%= link_to 'Exibir', answer, class: 'btn btn-primary center-block' %></td>
+                  <td><%= link_to 'Exibir', answer, class: 'btn btn-primary center-block white' %></td>
                   <td>
                     <%= link_to 'Alterar', edit_answer_path(answer),
-                                class: 'btn btn-primary center-block' %>
+                                class: 'btn btn-primary center-block white' %>
                   </td>
                   <td>
                     <%= link_to 'Deletar', answer, method: :delete,
                                 data: { confirm: 'Tem certeza?' },
-                                class: 'btn btn-primary center-block' %>
+                                class: 'btn btn-danger center-block white' %>
                   </td>
                 </tr>
             <% end %>

@@ -20,6 +20,7 @@ class AnswersController < ApplicationController
 
   # GET /answers/1/edit
   def edit
+    @subjects = Subject.all
   end
 
   # POST /answers
