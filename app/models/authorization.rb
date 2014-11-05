@@ -1,5 +1,5 @@
 class Authorization < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :player
 
   after_create :fetch_details
 

@@ -45,7 +45,7 @@ class Player < ActiveRecord::Base
       end
 
       authorization.username = auth.info.nickname
-      authorization.user_id = player.id
+      authorization.player_id = player.id
       authorization.save
     end
     authorization.player

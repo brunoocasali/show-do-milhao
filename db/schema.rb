@@ -14,29 +14,31 @@
 ActiveRecord::Schema.define(version: 20141104023058) do
 
   create_table "answers", force: true do |t|
+    t.integer  "answers_id"
+    t.integer  "question_id"
+    t.integer  "subject_id"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "question_id"
-    t.integer  "subject_id"
   end
 
+  add_index "answers", ["answers_id"], name: "index_answers_on_answers_id", using: :btree
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
   add_index "answers", ["subject_id"], name: "index_answers_on_subject_id", using: :btree
 
   create_table "authorizations", force: true do |t|
     t.string   "provider"
     t.string   "uid"
-    t.integer  "user_id"
+    t.integer  "player_id"
     t.string   "token"
     t.string   "secret"
+    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "username"
   end
 
   create_table "games", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "player_id"
     t.decimal  "worth",      precision: 10, scale: 2
     t.string   "image"
     t.boolean  "winner",                              default: false
@@ -44,7 +46,27 @@ ActiveRecord::Schema.define(version: 20141104023058) do
     t.datetime "updated_at"
   end
 
-  add_index "games", ["user_id"], name: "index_games_on_user_id", using: :btree
+  add_index "games", ["player_id"], name: "index_games_on_player_id", using: :btree
+
+  create_table "players", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "name"
+    t.string   "image"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "players", ["email"], name: "index_players_on_email", unique: true, using: :btree
+  add_index "players", ["reset_password_token"], name: "index_players_on_reset_password_token", unique: true, using: :btree
 
   create_table "questions", force: true do |t|
     t.text     "description"
@@ -62,25 +84,5 @@ ActiveRecord::Schema.define(version: 20141104023058) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "name"
-    t.string   "image"
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

@@ -20198,3 +20198,3586 @@ Migrating to CreateGames (20141104023058)
   [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141104023058')[0m
   [1m[35m (56.1ms)[0m  COMMIT
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-04 09:10:49 -0200
+
+RuntimeError (Wrong OmniAuth configuration. If you are getting this exception, it means that either:
+
+1) You are manually setting OmniAuth.config.path_prefix and it doesn't match the Devise one
+2) You are setting :omniauthable in more than one model
+3) You changed your Devise routes/OmniAuth setting and haven't restarted your server):
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 15:08:17 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 304ms
+
+ActionView::Template::Error (undefined local variable or method `current_user' for #<#<Class:0x000000068b1590>:0x000000068b0898>):
+    1: <% if current_user.blank? %>
+    2:     <h1>Olá! Faça login :D</h1>
+    3: <% else %>
+    4:     <h1>Welcomeee Guardian: <%= current_user.name %></h1>
+  app/views/welcome/index.html.erb:1:in `_app_views_welcome_index_html_erb__2997294097960395537_54792200'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.5ms)
+
+
+Started GET "/juntar" for 127.0.0.1 at 2014-11-05 15:10:22 -0200
+Processing by IntegrationsController#index as HTML
+  [1m[35mSubject Load (0.7ms)[0m  SELECT `subjects`.* FROM `subjects`
+  [1m[36mAnswer Load (0.6ms)[0m  [1mSELECT `answers`.* FROM `answers`  WHERE `answers`.`subject_id` IS NULL[0m
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT `questions`.* FROM `questions`  WHERE `questions`.`subject_id` IS NULL
+  Rendered integrations/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 2969ms (Views: 940.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+
+Started GET "/app/assets/stylesheets/chosen.min.css" for 127.0.0.1 at 2014-11-05 15:10:25 -0200
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/stylesheets/chosen.min.css"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.9ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (32.5ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (110.4ms)
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:26 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:26 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:26 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:26 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:26 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 15:10:26 -0200
+
+
+Started GET "/app/assets/javascripts/chosen.jquery.min.js" for 127.0.0.1 at 2014-11-05 15:10:26 -0200
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/javascripts/chosen.jquery.min.js"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.6ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (54.9ms)
+
+
+Started GET "/app/assets/stylesheets/chosen.min.css" for 127.0.0.1 at 2014-11-05 15:10:26 -0200
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/stylesheets/chosen.min.css"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.5ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.4ms)
+
+
+Started GET "/assets/chosen-sprite.png" for 127.0.0.1 at 2014-11-05 15:10:26 -0200
+
+ActionController::RoutingError (No route matches [GET] "/assets/chosen-sprite.png"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.3ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (49.7ms)
+
+
+Started GET "/juntar" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+Processing by IntegrationsController#index as HTML
+  [1m[36mSubject Load (0.2ms)[0m  [1mSELECT `subjects`.* FROM `subjects`[0m
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT `answers`.* FROM `answers`  WHERE `answers`.`subject_id` IS NULL
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT `questions`.* FROM `questions`  WHERE `questions`.`subject_id` IS NULL[0m
+  Rendered integrations/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/app/assets/stylesheets/chosen.min.css" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/stylesheets/chosen.min.css"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.0ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.8ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+
+Started GET "/app/assets/javascripts/chosen.jquery.min.js" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/javascripts/chosen.jquery.min.js"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.7ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (52.0ms)
+
+
+Started GET "/app/assets/stylesheets/chosen.min.css" for 127.0.0.1 at 2014-11-05 15:11:30 -0200
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/stylesheets/chosen.min.css"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.6ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.1ms)
+
+
+Started GET "/assets/chosen-sprite.png" for 127.0.0.1 at 2014-11-05 15:11:31 -0200
+
+ActionController::RoutingError (No route matches [GET] "/assets/chosen-sprite.png"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.1ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 15:11:32 -0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 15:11:33 -0200
+
+
+Started GET "/jogadores/" for 127.0.0.1 at 2014-11-05 15:11:55 -0200
+Processing by PlayersController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+ActionView::MissingTemplate (Missing template players/index, application/index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/bruno/develop/faculdade/show-do-milhao/app/views"
+  * "/home/bruno/.rvm/gems/ruby-2.1.2/gems/devise-3.3.0/app/views"
+):
+  actionview (4.1.4) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.4) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.4) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.4) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.4) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.4) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.4) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (1.0ms)
+
+
+Started GET "/entrar" for 127.0.0.1 at 2014-11-05 15:12:36 -0200
+Processing by Devise::SessionsController#new as HTML
+[Devise] Could not find devise mapping for path "/entrar".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 1ms
+
+AbstractController::ActionNotFound (Could not find devise mapping for path "/entrar".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  devise (3.3.0) app/controllers/devise_controller.rb:84:in `unknown_action!'
+  devise (3.3.0) app/controllers/devise_controller.rb:59:in `assert_is_devise_resource!'
+  devise (3.3.0) app/controllers/devise_controller.rb:97:in `require_no_authentication'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:424:in `block in make_lambda'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:143:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:143:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/mapper.rb:45:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.6ms)
+
+
+Started GET "/entrar" for 127.0.0.1 at 2014-11-05 15:12:38 -0200
+Processing by Devise::SessionsController#new as HTML
+[Devise] Could not find devise mapping for path "/entrar".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 1ms
+
+AbstractController::ActionNotFound (Could not find devise mapping for path "/entrar".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  devise (3.3.0) app/controllers/devise_controller.rb:84:in `unknown_action!'
+  devise (3.3.0) app/controllers/devise_controller.rb:59:in `assert_is_devise_resource!'
+  devise (3.3.0) app/controllers/devise_controller.rb:97:in `require_no_authentication'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:424:in `block in make_lambda'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:143:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:143:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/mapper.rb:45:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.7ms)
+
+
+Started GET "/entrar" for 127.0.0.1 at 2014-11-05 15:12:54 -0200
+Processing by Devise::SessionsController#new as HTML
+Mysql2::Error: Table 'show_million_development.players' doesn't exist: SHOW FULL FIELDS FROM `players`
+Completed 500 Internal Server Error in 34ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'show_million_development.players' doesn't exist: SHOW FULL FIELDS FROM `players`):
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:303:in `query'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:303:in `block in execute'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:373:in `block in log'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:367:in `log'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:303:in `execute'
+  activerecord (4.1.4) lib/active_record/connection_adapters/mysql2_adapter.rb:228:in `execute'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:310:in `execute_and_free'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:451:in `columns'
+  activerecord (4.1.4) lib/active_record/connection_adapters/schema_cache.rb:93:in `block in prepare_default_proc'
+  activerecord (4.1.4) lib/active_record/connection_adapters/schema_cache.rb:44:in `yield'
+  activerecord (4.1.4) lib/active_record/connection_adapters/schema_cache.rb:44:in `columns'
+  activerecord (4.1.4) lib/active_record/model_schema.rb:214:in `columns'
+  activerecord (4.1.4) lib/active_record/model_schema.rb:223:in `columns_hash'
+  activerecord (4.1.4) lib/active_record/inheritance.rb:180:in `subclass_from_attributes?'
+  activerecord (4.1.4) lib/active_record/inheritance.rb:23:in `new'
+  devise (3.3.0) app/controllers/devise/sessions_controller.rb:9:in `new'
+  actionpack (4.1.4) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.4) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.4) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.4) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.4) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.4) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.4) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/mapper.rb:45:in `call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.4) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.4) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.8ms)
+  [1m[36m (225.7ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (356.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateAuthorizations (20141003184759)
+  [1m[35m (133.7ms)[0m  CREATE TABLE `authorizations` (`id` int(11) auto_increment PRIMARY KEY, `provider` varchar(255), `uid` varchar(255), `user_id` int(11), `token` varchar(255), `secret` varchar(255), `username` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141003184759')
+  [1m[36m (58.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAnswers (20141031220840)
+  [1m[35m (176.2ms)[0m  CREATE TABLE `answers` (`id` int(11) auto_increment PRIMARY KEY, `answers_id` int(11), `question_id` int(11), `subject_id` int(11), `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (266.0ms)[0m  [1mCREATE  INDEX `index_answers_on_answers_id`  ON `answers` (`answers_id`) [0m
+  [1m[35m (294.6ms)[0m  CREATE  INDEX `index_answers_on_question_id`  ON `answers` (`question_id`) 
+  [1m[36m (338.3ms)[0m  [1mCREATE  INDEX `index_answers_on_subject_id`  ON `answers` (`subject_id`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141031220840')[0m
+  [1m[35m (131.3ms)[0m  COMMIT
+Migrating to CreateQuestions (20141031220949)
+  [1m[36m (245.4ms)[0m  [1mCREATE TABLE `questions` (`id` int(11) auto_increment PRIMARY KEY, `description` text, `correct_answer_id` int(11), `subject_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (380.0ms)[0m  CREATE  INDEX `index_questions_on_correct_answer_id`  ON `questions` (`correct_answer_id`) 
+  [1m[36m (264.6ms)[0m  [1mCREATE  INDEX `index_questions_on_subject_id`  ON `questions` (`subject_id`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141031220949')[0m
+  [1m[35m (75.5ms)[0m  COMMIT
+Migrating to CreateSubjects (20141031222821)
+  [1m[36m (124.0ms)[0m  [1mCREATE TABLE `subjects` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141031222821')[0m
+  [1m[35m (52.8ms)[0m  COMMIT
+Migrating to DeviseCreatePlayers (20141103013739)
+  [1m[36m (140.1ms)[0m  [1mCREATE TABLE `players` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `name` varchar(255), `image` varchar(255), `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (589.8ms)[0m  CREATE UNIQUE INDEX `index_players_on_email`  ON `players` (`email`) 
+  [1m[36m (663.9ms)[0m  [1mCREATE UNIQUE INDEX `index_players_on_reset_password_token`  ON `players` (`reset_password_token`) [0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141103013739')[0m
+  [1m[35m (259.5ms)[0m  COMMIT
+Migrating to CreateGames (20141104023058)
+  [1m[36m (131.9ms)[0m  [1mCREATE TABLE `games` (`id` int(11) auto_increment PRIMARY KEY, `player_id` int(11), `worth` decimal(10,2), `image` varchar(255), `winner` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (255.3ms)[0m  CREATE  INDEX `index_games_on_player_id`  ON `games` (`player_id`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141104023058')
+  [1m[36m (53.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/entrar" for 127.0.0.1 at 2014-11-05 15:17:49 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (4.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (128.3ms)
+Completed 200 OK in 287ms (Views: 254.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:49 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:49 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:49 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:49 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:49 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:49 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:49 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:50 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 15:17:52 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 15:17:52 -0200
+
+
+Started GET "/players/auth/facebook/callback?code=AQDZViwhUtQ8VrTy51F8U-VWCPRtFTLJS6iLzSpJg6uUN29sAFEp_skBwJGEHEFnMAWkbpcWVMsbxVjPLaMm34w4llTQf9es-upZNRFLAH_EorxG3Fihu7lt3BkAjLdoNrbd5xXTZjvODIB0a8jURXPlon183X6dZVakvyIB12nO_SDcTOitSsARgXOeLmDMhYv8KtbfGL9lTFsfrrtxwq3GT4H2TPrhB8c3L7IjmVOZZWbf77KOit1c5hLFW2RN1qYew7yc6yo02QdJVdvUgVTft-A60NdoBqwGinMGbeHCjQ6AQVu4JgsR8ohfocBMHM3QOEL405nu2H0Jo6f6rWFW&state=f2f3c6dd4c5e568c85f0b8bd7422bf3a6bffc05603651cbe" for 127.0.0.1 at 2014-11-05 15:17:53 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDZViwhUtQ8VrTy51F8U-VWCPRtFTLJS6iLzSpJg6uUN29sAFEp_skBwJGEHEFnMAWkbpcWVMsbxVjPLaMm34w4llTQf9es-upZNRFLAH_EorxG3Fihu7lt3BkAjLdoNrbd5xXTZjvODIB0a8jURXPlon183X6dZVakvyIB12nO_SDcTOitSsARgXOeLmDMhYv8KtbfGL9lTFsfrrtxwq3GT4H2TPrhB8c3L7IjmVOZZWbf77KOit1c5hLFW2RN1qYew7yc6yo02QdJVdvUgVTft-A60NdoBqwGinMGbeHCjQ6AQVu4JgsR8ohfocBMHM3QOEL405nu2H0Jo6f6rWFW", "state"=>"f2f3c6dd4c5e568c85f0b8bd7422bf3a6bffc05603651cbe"}
+Redirected to http://localhost:3000/players/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 15:17:54 -0200
+
+
+Started GET "/players/auth/twitter" for 127.0.0.1 at 2014-11-05 15:17:57 -0200
+
+
+Started GET "/players/auth/twitter" for 127.0.0.1 at 2014-11-05 15:17:59 -0200
+
+
+Started GET "/players/auth/twitter/callback?oauth_token=34oFatMqahxGjsUDo6P3kciEB1EL6B4K&oauth_verifier=SaVFupSnzhhuo93kw8AXh5EQmbMR8KMu" for 127.0.0.1 at 2014-11-05 15:18:07 -0200
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"34oFatMqahxGjsUDo6P3kciEB1EL6B4K", "oauth_verifier"=>"SaVFupSnzhhuo93kw8AXh5EQmbMR8KMu"}
+Completed 500 Internal Server Error in 16ms
+
+NameError (undefined local variable or method `current_user' for #<OmniauthCallbacksController:0x000000056c38d8>):
+  app/controllers/omniauth_callbacks_controller.rb:7:in `all'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.5ms)
+
+
+Started GET "/players/auth/twitter/callback?oauth_token=34oFatMqahxGjsUDo6P3kciEB1EL6B4K&oauth_verifier=SaVFupSnzhhuo93kw8AXh5EQmbMR8KMu" for 127.0.0.1 at 2014-11-05 15:19:15 -0200
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"34oFatMqahxGjsUDo6P3kciEB1EL6B4K", "oauth_verifier"=>"SaVFupSnzhhuo93kw8AXh5EQmbMR8KMu"}
+  [1m[35mAuthorization Load (0.4ms)[0m  SELECT  `authorizations`.* FROM `authorizations`  WHERE `authorizations`.`provider` = 'twitter' AND `authorizations`.`uid` = '1961188398' AND `authorizations`.`token` = '1961188398-IoYKJQxqiwqmcVyIuUqMATyiGzBwpmqPDTCF2de' AND `authorizations`.`secret` = 'Li1uOV9RauWw9z2TKvtRwlMMkSaLpcRrEdg9DOJ5NVTb0'  ORDER BY `authorizations`.`id` ASC LIMIT 1
+Completed 500 Internal Server Error in 59ms
+
+NoMethodError (undefined method `player' for #<Authorization:0x00000006480188>):
+  app/models/player.rb:33:in `from_omniauth'
+  app/controllers/omniauth_callbacks_controller.rb:7:in `all'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.7ms)
+
+
+Started GET "/players/auth/twitter/callback?oauth_token=34oFatMqahxGjsUDo6P3kciEB1EL6B4K&oauth_verifier=SaVFupSnzhhuo93kw8AXh5EQmbMR8KMu" for 127.0.0.1 at 2014-11-05 15:19:36 -0200
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"34oFatMqahxGjsUDo6P3kciEB1EL6B4K", "oauth_verifier"=>"SaVFupSnzhhuo93kw8AXh5EQmbMR8KMu"}
+  [1m[36mAuthorization Load (0.1ms)[0m  [1mSELECT  `authorizations`.* FROM `authorizations`  WHERE `authorizations`.`provider` = 'twitter' AND `authorizations`.`uid` = '1961188398' AND `authorizations`.`token` = '1961188398-IoYKJQxqiwqmcVyIuUqMATyiGzBwpmqPDTCF2de' AND `authorizations`.`secret` = 'Li1uOV9RauWw9z2TKvtRwlMMkSaLpcRrEdg9DOJ5NVTb0'  ORDER BY `authorizations`.`id` ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT  `players`.* FROM `players`  WHERE (email = '1961188398@twitter.com')  ORDER BY `players`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mPlayer Exists (0.6ms)[0m  SELECT  1 AS one FROM `players`  WHERE `players`.`email` = BINARY '1961188398@twitter.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `players` (`created_at`, `email`, `encrypted_password`, `name`, `updated_at`) VALUES ('2014-11-05 17:19:39', '1961188398@twitter.com', '$2a$10$De1hPi/Yg3NuBgkhFkw6mO9I5fEwvuSIDKxHSrR9nGElyGRvXIxv.', 'Bruno Casali', '2014-11-05 17:19:39')[0m
+  [1m[35m (54.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `authorizations` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`, `username`) VALUES ('2014-11-05 17:19:39', 'twitter', 'Li1uOV9RauWw9z2TKvtRwlMMkSaLpcRrEdg9DOJ5NVTb0', '1961188398-IoYKJQxqiwqmcVyIuUqMATyiGzBwpmqPDTCF2de', '1961188398', '2014-11-05 17:19:39', 1, 'brunoocasali')
+  [1m[36m (39.6ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 337ms
+
+NoMethodError (undefined method `persisted?' for nil:NilClass):
+  app/controllers/omniauth_callbacks_controller.rb:8:in `all'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.3ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 15:20:47 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 183ms (Views: 140.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:47 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:47 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:47 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 15:20:48 -0200
+
+
+Started GET "/players/auth/twitter" for 127.0.0.1 at 2014-11-05 15:20:49 -0200
+
+SocketError (getaddrinfo: Name or service not known):
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/net/http.rb:879:in `initialize'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/net/http.rb:879:in `open'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/net/http.rb:879:in `block in connect'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/timeout.rb:91:in `block in timeout'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/timeout.rb:101:in `call'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/timeout.rb:101:in `timeout'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/net/http.rb:878:in `connect'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/net/http.rb:863:in `do_start'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/net/http.rb:852:in `start'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/net/http.rb:1369:in `request'
+  oauth (0.4.7) lib/oauth/consumer.rb:161:in `request'
+  oauth (0.4.7) lib/oauth/consumer.rb:194:in `token_request'
+  oauth (0.4.7) lib/oauth/consumer.rb:136:in `get_request_token'
+  omniauth-oauth (1.0.1) lib/omniauth/strategies/oauth.rb:29:in `request_phase'
+  omniauth-twitter (1.0.1) lib/omniauth/strategies/twitter.rb:60:in `request_phase'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:215:in `request_call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:183:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.4) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.4) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.1ms)
+
+
+Started GET "/players/auth/twitter" for 127.0.0.1 at 2014-11-05 15:21:09 -0200
+
+
+Started GET "/players/auth/twitter" for 127.0.0.1 at 2014-11-05 15:21:35 -0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:08 -0200
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-11-05 17:19:13 -0200
+
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.5ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (56.7ms)
+
+
+Started GET "/players/" for 127.0.0.1 at 2014-11-05 17:19:18 -0200
+
+ActionController::RoutingError (No route matches [GET] "/players"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.1ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (50.6ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:19:19 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:20 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:19:22 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:19:22 -0200
+
+
+Started GET "/players/auth/facebook/callback?code=AQCnypoDJJs2XOPxgSSdaJiyWJ6DtUBkFQn-ILednO5IR7lrzidnRHnW-mz6duFRiAOaFdsqvj-JAaDV5Q55HVxYyYD4mJsOHzNtSi_5-bIWzWknxDxzWtl6GKsfek47o6W4lvvvkEHGQeiSgw93O4krRAFH47k3rB9DNvXGmh-d_LwHOQUhNaiyTqsrRr5_mePov35XkwyUPWIsPkCUIBiGRA2vQvrr_bKRJ077u04HSXTjU8-t9-rNCRS2WcOvPkmgP4pcflzQhv4PQSuaNOlw1CszOx4HQVQJ1KSoo-vhOoiIlVars-MzUdTJwY7FGeLtnFaM0fCE4hHC60LdqL0F&state=5ae9fa5d677b1fafe140c7d48bca5df1719ab0bb44153b14" for 127.0.0.1 at 2014-11-05 17:19:23 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCnypoDJJs2XOPxgSSdaJiyWJ6DtUBkFQn-ILednO5IR7lrzidnRHnW-mz6duFRiAOaFdsqvj-JAaDV5Q55HVxYyYD4mJsOHzNtSi_5-bIWzWknxDxzWtl6GKsfek47o6W4lvvvkEHGQeiSgw93O4krRAFH47k3rB9DNvXGmh-d_LwHOQUhNaiyTqsrRr5_mePov35XkwyUPWIsPkCUIBiGRA2vQvrr_bKRJ077u04HSXTjU8-t9-rNCRS2WcOvPkmgP4pcflzQhv4PQSuaNOlw1CszOx4HQVQJ1KSoo-vhOoiIlVars-MzUdTJwY7FGeLtnFaM0fCE4hHC60LdqL0F", "state"=>"5ae9fa5d677b1fafe140c7d48bca5df1719ab0bb44153b14"}
+Redirected to http://localhost:3000/players/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:19:23 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:23 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:23 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:23 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:23 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:19:24 -0200
+
+
+Started GET "/players/auth/twitter" for 127.0.0.1 at 2014-11-05 17:19:27 -0200
+
+
+Started GET "/players/auth/twitter" for 127.0.0.1 at 2014-11-05 17:19:29 -0200
+
+
+Started GET "/players/auth/twitter/callback?oauth_token=46M1UbxKALkmgs3ZYaaok76EV8CvnrbB&oauth_verifier=3TL22QMaoyOL2hseBy8T46202bqAoFJ6" for 127.0.0.1 at 2014-11-05 17:19:39 -0200
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"46M1UbxKALkmgs3ZYaaok76EV8CvnrbB", "oauth_verifier"=>"3TL22QMaoyOL2hseBy8T46202bqAoFJ6"}
+  [1m[35mAuthorization Load (1.0ms)[0m  SELECT  `authorizations`.* FROM `authorizations`  WHERE `authorizations`.`provider` = 'twitter' AND `authorizations`.`uid` = '1961188398' AND `authorizations`.`token` = '1961188398-IoYKJQxqiwqmcVyIuUqMATyiGzBwpmqPDTCF2de' AND `authorizations`.`secret` = 'Li1uOV9RauWw9z2TKvtRwlMMkSaLpcRrEdg9DOJ5NVTb0'  ORDER BY `authorizations`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (0.7ms)[0m  [1mSELECT  `players`.* FROM `players`  WHERE (email = '1961188398@twitter.com')  ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 40ms
+
+NoMethodError (undefined method `persisted?' for nil:NilClass):
+  app/controllers/omniauth_callbacks_controller.rb:8:in `all'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.2ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.0ms)
+
+
+Started GET "/players/auth/twitter/callback?oauth_token=46M1UbxKALkmgs3ZYaaok76EV8CvnrbB&oauth_verifier=3TL22QMaoyOL2hseBy8T46202bqAoFJ6" for 127.0.0.1 at 2014-11-05 17:22:29 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"46M1UbxKALkmgs3ZYaaok76EV8CvnrbB", "oauth_verifier"=>"3TL22QMaoyOL2hseBy8T46202bqAoFJ6"}
+  [1m[35mAuthorization Load (0.3ms)[0m  SELECT  `authorizations`.* FROM `authorizations`  WHERE `authorizations`.`provider` = 'twitter' AND `authorizations`.`uid` = '1961188398' AND `authorizations`.`token` = '1961188398-IoYKJQxqiwqmcVyIuUqMATyiGzBwpmqPDTCF2de' AND `authorizations`.`secret` = 'Li1uOV9RauWw9z2TKvtRwlMMkSaLpcRrEdg9DOJ5NVTb0'  ORDER BY `authorizations`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT  `players`.* FROM `players`  WHERE (email = '1961188398@twitter.com')  ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 455754ms
+
+NoMethodError (undefined method `persisted?' for nil:NilClass):
+  app/controllers/omniauth_callbacks_controller.rb:8:in `all'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.4ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.4ms)
+  [1m[36m (137.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (332.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateAuthorizations (20141003184759)
+  [1m[35m (122.8ms)[0m  CREATE TABLE `authorizations` (`id` int(11) auto_increment PRIMARY KEY, `provider` varchar(255), `uid` varchar(255), `player_id` int(11), `token` varchar(255), `secret` varchar(255), `username` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141003184759')
+  [1m[36m (59.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAnswers (20141031220840)
+  [1m[35m (131.5ms)[0m  CREATE TABLE `answers` (`id` int(11) auto_increment PRIMARY KEY, `answers_id` int(11), `question_id` int(11), `subject_id` int(11), `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (254.8ms)[0m  [1mCREATE  INDEX `index_answers_on_answers_id`  ON `answers` (`answers_id`) [0m
+  [1m[35m (255.4ms)[0m  CREATE  INDEX `index_answers_on_question_id`  ON `answers` (`question_id`) 
+  [1m[36m (288.9ms)[0m  [1mCREATE  INDEX `index_answers_on_subject_id`  ON `answers` (`subject_id`) [0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141031220840')[0m
+  [1m[35m (63.4ms)[0m  COMMIT
+Migrating to CreateQuestions (20141031220949)
+  [1m[36m (119.8ms)[0m  [1mCREATE TABLE `questions` (`id` int(11) auto_increment PRIMARY KEY, `description` text, `correct_answer_id` int(11), `subject_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (278.3ms)[0m  CREATE  INDEX `index_questions_on_correct_answer_id`  ON `questions` (`correct_answer_id`) 
+  [1m[36m (244.1ms)[0m  [1mCREATE  INDEX `index_questions_on_subject_id`  ON `questions` (`subject_id`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141031220949')[0m
+  [1m[35m (52.4ms)[0m  COMMIT
+Migrating to CreateSubjects (20141031222821)
+  [1m[36m (131.5ms)[0m  [1mCREATE TABLE `subjects` (`id` int(11) auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141031222821')[0m
+  [1m[35m (52.3ms)[0m  COMMIT
+Migrating to DeviseCreatePlayers (20141103013739)
+  [1m[36m (141.2ms)[0m  [1mCREATE TABLE `players` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `name` varchar(255), `image` varchar(255), `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (254.9ms)[0m  CREATE UNIQUE INDEX `index_players_on_email`  ON `players` (`email`) 
+  [1m[36m (265.2ms)[0m  [1mCREATE UNIQUE INDEX `index_players_on_reset_password_token`  ON `players` (`reset_password_token`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20141103013739')[0m
+  [1m[35m (64.0ms)[0m  COMMIT
+Migrating to CreateGames (20141104023058)
+  [1m[36m (120.6ms)[0m  [1mCREATE TABLE `games` (`id` int(11) auto_increment PRIMARY KEY, `player_id` int(11), `worth` decimal(10,2), `image` varchar(255), `winner` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (266.5ms)[0m  CREATE  INDEX `index_games_on_player_id`  ON `games` (`player_id`) 
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20141104023058')
+  [1m[36m (51.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:33:15 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (9.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (138.3ms)
+Completed 200 OK in 542ms (Views: 503.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:33:16 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (5.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 64ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:17 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:17 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:17 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:17 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:17 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:17 -0200
+
+
+Started GET "/players/sign_i" for 127.0.0.1 at 2014-11-05 17:33:20 -0200
+
+ActionController::RoutingError (No route matches [GET] "/players/sign_i"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/bruno/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (41.0ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.9ms)
+  Rendered /home/bruno/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (274.8ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:33:21 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (7.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 90ms (Views: 81.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:33:22 -0200
+
+
+Started GET "/players/auth/twitter" for 127.0.0.1 at 2014-11-05 17:33:26 -0200
+
+
+Started GET "/players/auth/twitter" for 127.0.0.1 at 2014-11-05 17:33:28 -0200
+
+
+Started GET "/players/auth/twitter/callback?oauth_token=4EAT6btlUqB8CIVKCPYfxvY1gw9mHGhQ&oauth_verifier=5XjqJhJZjhsU5qmqwBj8Ik5cEPllk4v6" for 127.0.0.1 at 2014-11-05 17:33:36 -0200
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"4EAT6btlUqB8CIVKCPYfxvY1gw9mHGhQ", "oauth_verifier"=>"5XjqJhJZjhsU5qmqwBj8Ik5cEPllk4v6"}
+  [1m[35mAuthorization Load (0.8ms)[0m  SELECT  `authorizations`.* FROM `authorizations`  WHERE `authorizations`.`provider` = 'twitter' AND `authorizations`.`uid` = '1961188398' AND `authorizations`.`token` = '1961188398-IoYKJQxqiwqmcVyIuUqMATyiGzBwpmqPDTCF2de' AND `authorizations`.`secret` = 'Li1uOV9RauWw9z2TKvtRwlMMkSaLpcRrEdg9DOJ5NVTb0'  ORDER BY `authorizations`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (0.9ms)[0m  [1mSELECT  `players`.* FROM `players`  WHERE (email = '1961188398@twitter.com')  ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mPlayer Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM `players`  WHERE `players`.`email` = BINARY '1961188398@twitter.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `players` (`created_at`, `email`, `encrypted_password`, `name`, `updated_at`) VALUES ('2014-11-05 19:34:14', '1961188398@twitter.com', '$2a$10$whims55y/IYFiCgElxqFme11uFTbDxaHw91FUvta5BGarGkGyPzR6', 'Bruno Casali', '2014-11-05 19:34:14')
+  [1m[36m (93.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `authorizations` (`created_at`, `player_id`, `provider`, `secret`, `token`, `uid`, `updated_at`, `username`) VALUES ('2014-11-05 19:34:14', 1, 'twitter', 'Li1uOV9RauWw9z2TKvtRwlMMkSaLpcRrEdg9DOJ5NVTb0', '1961188398-IoYKJQxqiwqmcVyIuUqMATyiGzBwpmqPDTCF2de', '1961188398', '2014-11-05 19:34:14', 'brunoocasali')[0m
+  [1m[35m (62.2ms)[0m  COMMIT
+  [1m[36mPlayer Load (1.1ms)[0m  [1mSELECT  `players`.* FROM `players`  WHERE `players`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `players` SET `current_sign_in_at` = '2014-11-05 19:34:14', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2014-11-05 19:34:14', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2014-11-05 19:34:14' WHERE `players`.`id` = 1[0m
+  [1m[35m (90.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 507ms (ActiveRecord: 255.8ms)
+
+
+Started GET "/players/auth/twitter/callback?oauth_token=4EAT6btlUqB8CIVKCPYfxvY1gw9mHGhQ&oauth_verifier=5XjqJhJZjhsU5qmqwBj8Ik5cEPllk4v6" for 127.0.0.1 at 2014-11-05 17:34:14 -0200
+Processing by OmniauthCallbacksController#twitter as HTML
+  Parameters: {"oauth_token"=>"4EAT6btlUqB8CIVKCPYfxvY1gw9mHGhQ", "oauth_verifier"=>"5XjqJhJZjhsU5qmqwBj8Ik5cEPllk4v6"}
+  [1m[36mAuthorization Load (0.7ms)[0m  [1mSELECT  `authorizations`.* FROM `authorizations`  WHERE `authorizations`.`provider` = 'twitter' AND `authorizations`.`uid` = '1961188398' AND `authorizations`.`token` = '1961188398-IoYKJQxqiwqmcVyIuUqMATyiGzBwpmqPDTCF2de' AND `authorizations`.`secret` = 'Li1uOV9RauWw9z2TKvtRwlMMkSaLpcRrEdg9DOJ5NVTb0'  ORDER BY `authorizations`.`id` ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.6ms)[0m  SELECT  `players`.* FROM `players`  WHERE `players`.`id` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE `players` SET `current_sign_in_at` = '2014-11-05 19:34:17', `sign_in_count` = 2, `updated_at` = '2014-11-05 19:34:17' WHERE `players`.`id` = 1
+  [1m[36m (74.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 103ms (ActiveRecord: 76.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 17:34:17 -0200
+Processing by WelcomeController#index as HTML
+  [1m[35mPlayer Load (0.6ms)[0m  SELECT  `players`.* FROM `players`  WHERE `players`.`id` = 1  ORDER BY `players`.`id` ASC LIMIT 1
+  Rendered welcome/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 50ms (Views: 45.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:18 -0200
+
+
+Started GET "/players/sign_out" for 127.0.0.1 at 2014-11-05 17:34:34 -0200
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT  `players`.* FROM `players`  WHERE `players`.`id` = 1  ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 50ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 17:34:34 -0200
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (5.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 82ms (Views: 75.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:42 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:34:45 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:34:45 -0200
+
+
+Started GET "/players/auth/facebook/callback?code=AQCy5oKlac5qwYL8I8XfAnbu7HRG6aEARIYAjgkYztkZNq75wrOqMFVYYrCnC1gfY6pn5CHrYZ8_FLfntBj08MCkj0uCjf2-TDAi81DuttVWpCpV_SWzm8XaUGDiD1GUoiiEU_Uav1HqErPRcc8QVKTPEWjwigXJ8APaPTo-iZWegRelX-JBsTNsHukAY4RFQ-7h4SdXXi-tSI_2X8fdZ5bGkpu8ADH6UlgY577J5QyvJamv6G8iFbQqmNts2vFTqpB6oIudExlF432-RuMaUOuivQUoqO6z14IiUZ6JzXcqgoC1nyrJCJpRmQucl6C7svIygnhpkmj8OhTeRQtrTyN6&state=6b35b1e7630cdaebb7369c429bac63fd447f14f1cf1e8956" for 127.0.0.1 at 2014-11-05 17:34:46 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCy5oKlac5qwYL8I8XfAnbu7HRG6aEARIYAjgkYztkZNq75wrOqMFVYYrCnC1gfY6pn5CHrYZ8_FLfntBj08MCkj0uCjf2-TDAi81DuttVWpCpV_SWzm8XaUGDiD1GUoiiEU_Uav1HqErPRcc8QVKTPEWjwigXJ8APaPTo-iZWegRelX-JBsTNsHukAY4RFQ-7h4SdXXi-tSI_2X8fdZ5bGkpu8ADH6UlgY577J5QyvJamv6G8iFbQqmNts2vFTqpB6oIudExlF432-RuMaUOuivQUoqO6z14IiUZ6JzXcqgoC1nyrJCJpRmQucl6C7svIygnhpkmj8OhTeRQtrTyN6", "state"=>"6b35b1e7630cdaebb7369c429bac63fd447f14f1cf1e8956"}
+Redirected to http://localhost:3000/players/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:34:47 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (5.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 68ms (Views: 61.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:47 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:47 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:47 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:47 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:47 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:34:48 -0200
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:36:00 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 208ms (Views: 171.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:01 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:36:04 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:36:04 -0200
+
+
+Started GET "/players/auth/facebook/callback?code=AQBZQhAQtgjeUSt8_U0vXmmbPiXjrnxx1BPkQroTMj1NvSdVqJOJURuIAdgrns2JrJpR9UxKsIr4tQL2IH20-90zZ8RavnBVoeFFnKT927_KuFHj8HFaifb-HSzSVq4wMjQuoadbYfgsYDI-qPBYBZR9qtEM3JZmv6UwSIrhVUkHRhbQwVynFC021SVXsBtdmO1ksOzgCxo6-ONqse19MyC7FhKVT1mBpvJF0-k6YJQ6K3Vo9yxYfnzr5D70kmKwmDJhh_pfrOzXuqwbJ0f-_Q2s49Py26ywVmII4ep2uWTrejo7ugm2IHX6aGcckh3fR3-XG6kRPjT5op9RxdKyD1Ol&state=5374007da0e30fc2bbbda4e8738d733dcff3942667296c98" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBZQhAQtgjeUSt8_U0vXmmbPiXjrnxx1BPkQroTMj1NvSdVqJOJURuIAdgrns2JrJpR9UxKsIr4tQL2IH20-90zZ8RavnBVoeFFnKT927_KuFHj8HFaifb-HSzSVq4wMjQuoadbYfgsYDI-qPBYBZR9qtEM3JZmv6UwSIrhVUkHRhbQwVynFC021SVXsBtdmO1ksOzgCxo6-ONqse19MyC7FhKVT1mBpvJF0-k6YJQ6K3Vo9yxYfnzr5D70kmKwmDJhh_pfrOzXuqwbJ0f-_Q2s49Py26ywVmII4ep2uWTrejo7ugm2IHX6aGcckh3fR3-XG6kRPjT5op9RxdKyD1Ol", "state"=>"5374007da0e30fc2bbbda4e8738d733dcff3942667296c98"}
+Redirected to http://localhost:3000/players/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:05 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:06 -0200
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:19 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:36:30 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:36:30 -0200
+
+
+Started GET "/players/auth/facebook/callback?code=AQAt2X9nvPwijbTZpVscMJ-Br-ymMgAgD6NepmaBkUeuf2FYNt2GtJM78hy8ggVTnQ1uLBMUo0UfKN5TnI5pTyX-pYWje7X1lCVzXZWXjO5CSKvJR_e4a_o2nAbN5pfw-KMQIaix_KLEBbakqy3OGC9PkLRGCszaaAHhUvf7OQlB0OVGZLdrjAH5VE6f7OaF3KKzZLRz9YbvyPQrnAwEkuf6BbyXkeALi6zNkrBpQm2HbOshBqoJheFXT7x8GU1uYdI9_3lfpXGD0WcN7kTQcK-useFIea-Z8BArBh9EizvNVqa11gVSg8LLeI-GPUb_2NAxosEDGFBh0y4-1XZATvFv&state=0fe9289bde72fc1a4958b308c7f9ce5b39d37973237234c8" for 127.0.0.1 at 2014-11-05 17:36:30 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQAt2X9nvPwijbTZpVscMJ-Br-ymMgAgD6NepmaBkUeuf2FYNt2GtJM78hy8ggVTnQ1uLBMUo0UfKN5TnI5pTyX-pYWje7X1lCVzXZWXjO5CSKvJR_e4a_o2nAbN5pfw-KMQIaix_KLEBbakqy3OGC9PkLRGCszaaAHhUvf7OQlB0OVGZLdrjAH5VE6f7OaF3KKzZLRz9YbvyPQrnAwEkuf6BbyXkeALi6zNkrBpQm2HbOshBqoJheFXT7x8GU1uYdI9_3lfpXGD0WcN7kTQcK-useFIea-Z8BArBh9EizvNVqa11gVSg8LLeI-GPUb_2NAxosEDGFBh0y4-1XZATvFv", "state"=>"0fe9289bde72fc1a4958b308c7f9ce5b39d37973237234c8"}
+Redirected to http://localhost:3000/players/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:31 -0200
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 213ms (Views: 171.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:43 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:44 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:44 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:44 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:36:45 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:36:45 -0200
+
+
+Started GET "/players/auth/facebook/callback?code=AQCWt51yGuRjwJL4zoGIIPOXzUd9WEAHYAdg0ZUXUN03dJUy-rqWp3iA-F6lQm60Cj-FCdZ4yADrx-Dz2Gh_O9-EL5WbfCF4IVQrC8HtBHpFTG_zHiS_NOX-Lq39hOo5mQ7O6ZFKqPiLLYvxkD6lm1aQHSpSiZ3k8XbcxCPoBRhoVCp7o8wZVGuOo-cMKIMQKwJqbO8qs7iy1O64nnv4nOewtllzUoHhzn9pltMYcr8KV-5nH06TpdN_mPYIPX64QfUT2xrGM2D8OdBWcN8cwBi7Cs6gGzyJ2cDgBg8ChzmlQReUiW53N5-3akq-rgJ-6rSw7jhpnSvqQAcYOcHmrhox&state=58f84bb6c238ae97557355fb2067bba8b194b0b26662ea05" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCWt51yGuRjwJL4zoGIIPOXzUd9WEAHYAdg0ZUXUN03dJUy-rqWp3iA-F6lQm60Cj-FCdZ4yADrx-Dz2Gh_O9-EL5WbfCF4IVQrC8HtBHpFTG_zHiS_NOX-Lq39hOo5mQ7O6ZFKqPiLLYvxkD6lm1aQHSpSiZ3k8XbcxCPoBRhoVCp7o8wZVGuOo-cMKIMQKwJqbO8qs7iy1O64nnv4nOewtllzUoHhzn9pltMYcr8KV-5nH06TpdN_mPYIPX64QfUT2xrGM2D8OdBWcN8cwBi7Cs6gGzyJ2cDgBg8ChzmlQReUiW53N5-3akq-rgJ-6rSw7jhpnSvqQAcYOcHmrhox", "state"=>"58f84bb6c238ae97557355fb2067bba8b194b0b26662ea05"}
+Redirected to http://localhost:3000/players/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:36:46 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:47 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:36:47 -0200
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 203ms (Views: 165.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:37:16 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:37:18 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:37:18 -0200
+
+
+Started GET "/players/auth/facebook/callback?code=AQDjqse0a1SnHd0RQ6HeoEzC0zhmkbwbgi9-b1EB5ppmdCWs8ZmTeUxS8vBv0N5zfKELbklgOzbB6UL_VhWSlvwyqGdqHMtOvZhgf2zuLTURKXebsCdiMQmpqmfXOtxHZiMtBzQisMRSWoZXaz16e_dcp-QqJpQaqYxGC_sjDbON0I0qw_2syb3ejhI8h9FC52o9SsiSbApOyFihLyCuSDZG2m8sOOjTxh0AHUb9XSKk4E87fnds_Em1AfcRBSsSFdHaWq6tIQxDP1sTfFUX_2SH8bCw9jGT1u97dNTgH7C01XdZazlFbbNPeKIJez7EFFWlhuWH5lSvw8qcD-IUWKsr&state=34c752ed88ae0cb1f28780995b73f9baddff9852744d0f82" for 127.0.0.1 at 2014-11-05 17:38:01 -0200
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDjqse0a1SnHd0RQ6HeoEzC0zhmkbwbgi9-b1EB5ppmdCWs8ZmTeUxS8vBv0N5zfKELbklgOzbB6UL_VhWSlvwyqGdqHMtOvZhgf2zuLTURKXebsCdiMQmpqmfXOtxHZiMtBzQisMRSWoZXaz16e_dcp-QqJpQaqYxGC_sjDbON0I0qw_2syb3ejhI8h9FC52o9SsiSbApOyFihLyCuSDZG2m8sOOjTxh0AHUb9XSKk4E87fnds_Em1AfcRBSsSFdHaWq6tIQxDP1sTfFUX_2SH8bCw9jGT1u97dNTgH7C01XdZazlFbbNPeKIJez7EFFWlhuWH5lSvw8qcD-IUWKsr", "state"=>"34c752ed88ae0cb1f28780995b73f9baddff9852744d0f82"}
+Redirected to http://localhost:3000/players/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:02 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:38:03 -0200
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (3.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 211ms (Views: 171.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:04 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:05 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:05 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:39:07 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:39:07 -0200
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:39:33 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:39:34 -0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:35 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:39:37 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:39:37 -0200
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (3.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 240ms (Views: 202.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:48 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:39:50 -0200
+
+
+Started GET "/players/auth/facebook" for 127.0.0.1 at 2014-11-05 17:39:50 -0200
+
+
+Started GET "/players/auth/facebook/callback?code=AQDFKYKXz5qXXofL-Av-WXPaPKaMLq0Up4BaZq7mMcZjYXroA4FnT41fKOk6Gx13k7hwqTp-6y--FGcoN4c3IqNT1r9NXNqpbDs9_9d8uzuqu5yVqYbL-22xrVHc7mztnZk-tvJfspATtvugJB0xcvcNdePAp7RmUTFqO67ErAGeN3273PuMTaYla5CL1uzTWDzLet4YFuKkkPUkctW2jTnbOiWUrUGUUBAw9konXmgYfpcVO35oIJe7GXXfBRwF13Gbud1VWlFtAnSMqxu6ILH_MynG8Ub5cHlSrjPBKTHKP9nGC8TMjs2Tw3t-aEjn3ozA6EAqJg8goD6G5iWXjk_o&state=4959d323b95f399431e0efc19fe09fe35bdf98d3ae7d1dde" for 127.0.0.1 at 2014-11-05 17:39:50 -0200
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDFKYKXz5qXXofL-Av-WXPaPKaMLq0Up4BaZq7mMcZjYXroA4FnT41fKOk6Gx13k7hwqTp-6y--FGcoN4c3IqNT1r9NXNqpbDs9_9d8uzuqu5yVqYbL-22xrVHc7mztnZk-tvJfspATtvugJB0xcvcNdePAp7RmUTFqO67ErAGeN3273PuMTaYla5CL1uzTWDzLet4YFuKkkPUkctW2jTnbOiWUrUGUUBAw9konXmgYfpcVO35oIJe7GXXfBRwF13Gbud1VWlFtAnSMqxu6ILH_MynG8Ub5cHlSrjPBKTHKP9nGC8TMjs2Tw3t-aEjn3ozA6EAqJg8goD6G5iWXjk_o", "state"=>"4959d323b95f399431e0efc19fe09fe35bdf98d3ae7d1dde"}
+  [1m[35mAuthorization Load (0.9ms)[0m  SELECT  `authorizations`.* FROM `authorizations`  WHERE `authorizations`.`provider` = 'facebook' AND `authorizations`.`uid` = '1474259466189421' AND `authorizations`.`token` = 'CAAFg9tQtasIBALOBdJTgN78H3u1qzfq8jfJ980ECwNXh178WN6HOlZAnyZBZCJ7ZA4j4NBAtIx6ZAYzQrLBLAWzduVXHrJMlN1in1ZAasALoWGPuUbai5o4SW4Y6DbHpP2oSZAl1MlUjlwTetTZAfCzGBKE47MNVOtFO4bbgVUcrCvFS7zZCwhMnqYW2ZAvjrZB8X6799cExrysqK7bLZAqiUJDu' AND `authorizations`.`secret` IS NULL  ORDER BY `authorizations`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (0.7ms)[0m  [1mSELECT  `players`.* FROM `players`  WHERE (email = 'brunoocasali@gmail.com')  ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPlayer Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `players`  WHERE `players`.`email` = BINARY 'brunoocasali@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `players` (`created_at`, `email`, `encrypted_password`, `name`, `updated_at`) VALUES ('2014-11-05 19:39:52', 'brunoocasali@gmail.com', '$2a$10$/uokWNiOiCkydyW/K2KCBOhNuIcpkaDvyHw4tfYeL7oEKPpvh/tiu', 'Bruno Casali', '2014-11-05 19:39:52')
+  [1m[36m (130.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `authorizations` (`created_at`, `player_id`, `provider`, `token`, `uid`, `updated_at`) VALUES ('2014-11-05 19:39:52', 2, 'facebook', 'CAAFg9tQtasIBALOBdJTgN78H3u1qzfq8jfJ980ECwNXh178WN6HOlZAnyZBZCJ7ZA4j4NBAtIx6ZAYzQrLBLAWzduVXHrJMlN1in1ZAasALoWGPuUbai5o4SW4Y6DbHpP2oSZAl1MlUjlwTetTZAfCzGBKE47MNVOtFO4bbgVUcrCvFS7zZCwhMnqYW2ZAvjrZB8X6799cExrysqK7bLZAqiUJDu', '1474259466189421', '2014-11-05 19:39:52')[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `authorizations` SET `created_at` = '2014-11-05 19:39:52', `id` = 2, `player_id` = 2, `provider` = 'facebook', `token` = 'CAAFg9tQtasIBALOBdJTgN78H3u1qzfq8jfJ980ECwNXh178WN6HOlZAnyZBZCJ7ZA4j4NBAtIx6ZAYzQrLBLAWzduVXHrJMlN1in1ZAasALoWGPuUbai5o4SW4Y6DbHpP2oSZAl1MlUjlwTetTZAfCzGBKE47MNVOtFO4bbgVUcrCvFS7zZCwhMnqYW2ZAvjrZB8X6799cExrysqK7bLZAqiUJDu', `uid` = '1474259466189421', `updated_at` = '2014-11-05 19:39:52' WHERE `authorizations`.`id` = 2
+  [1m[36m (66.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mPlayer Load (0.6ms)[0m  SELECT  `players`.* FROM `players`  WHERE `players`.`id` = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `players` SET `current_sign_in_at` = '2014-11-05 19:39:53', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2014-11-05 19:39:53', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2014-11-05 19:39:53' WHERE `players`.`id` = 2
+  [1m[36m (57.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1015ms (ActiveRecord: 261.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+Processing by WelcomeController#index as HTML
+  [1m[35mPlayer Load (0.9ms)[0m  SELECT  `players`.* FROM `players`  WHERE `players`.`id` = 2  ORDER BY `players`.`id` ASC LIMIT 1
+  Rendered welcome/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/chosen.min.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/answers.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/authentication.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/games.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/integration.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/omniauth_callbacks.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/questions.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/subjects.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/authentication.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/answers.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/chosen.jquery.min.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/games.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/integration.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/questions.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/subjects.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 17:39:53 -0200

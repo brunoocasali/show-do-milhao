@@ -11,5 +11,12 @@ Rails.application.routes.draw do
   post 'juntar', :controller => 'integrations', :action => 'index'
   get 'juntar', :controller => 'integrations', :action => 'index'
 
+  devise_scope :player do
+    get '/cadastrar' => 'devise/registrations#new'
+    get '/entrar' => 'devise/sessions#new'
+    get '/editar' => 'devise/registrations#edit'
+    delete '/sair' => 'devise/sessions#destroy'
+  end
+
   root 'welcome#index'
 end
