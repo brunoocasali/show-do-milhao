@@ -2,4 +2,8 @@
     <h1>Olá! Faça login :D</h1>
 <% else %>
     <h1>Welcomeee Guardian: <%= current_player.name %></h1>
+
+    <%= link_to 'Questões', questions_path %> <br />
+    <%= link_to 'Respostas', questions_path %> <br />
+    <%= link_to 'Integrar', questions_path %>
 <% end %>
