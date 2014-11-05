@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Show do Milhão</title>
+  <title>Show do Milhão! :D</title>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
+<% unless current_player.blank? %>
+    <%#= render 'layouts/administrator_navbar' %>
+<% end %>
 
-<%= yield %>
-
+<div class="container" id="content">
+  <div class="row template">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>

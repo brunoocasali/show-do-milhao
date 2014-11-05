@@ -1,27 +1,29 @@
-<%= form_for(@question) do |f| %>
-    <% if @question.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+<div class="portlet-content">
+  <%= form_for(@question) do |f| %>
+      <% if @question.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
 
-          <ul>
-            <% @question.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
+            <ul>
+              <% @question.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
 
-    <div class="field">
-      <%= f.label :description, 'Descrição' %><br />
-      <%= f.text_area :description %>
-    </div>
+      <div class="form-group col-md-12">
+        <%= f.label :description, 'Descrição' %><br />
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
 
-    <div class="field">
-      <%= f.label :subject_id %><br>
-      <%= f.select :subject_id, @subjects.collect{|sub| [sub.title, sub.id]}, { },
-                   {required: true} %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-<% end %>
+      <div class="form-group col-md-12">
+        <%= f.label :subject_id %><br>
+        <%= f.select :subject_id, @subjects.collect{|sub| [sub.title, sub.id]}, { },
+                     { required: true, class: 'form-control' } %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.submit 'Salvar Questão!', class: 'btn btn-success'  %>
+      </div>
+  <% end %>
+</div>

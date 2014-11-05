@@ -1,5 +1,11 @@
-<h1>New question</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', questions_path %>
+<div class="col-md-7 col-md-offset-2 animated fadeInDown">
+  <div class="portlet row">
+    <div class="portlet-header">
+      <h3>Nova questão!</h3>
+    </div>
+    <%= render 'form' %>
+    <div class="form-group col-md-6">
+      <%= link_to 'Voltar', questions_path, class: 'btn btn-primary pull-right' %>
+    </div>
+  </div>
+</div>
