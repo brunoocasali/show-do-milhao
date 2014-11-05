@@ -1,6 +1,11 @@
-<h1>Editing answer</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @answer %> |
-<%= link_to 'Back', answers_path %>
+<div class="col-md-7 col-md-offset-2 animated fadeInDown">
+  <div class="portlet row">
+    <div class="portlet-header">
+      <h3>Editar resposta!</h3>
+    </div>
+    <%= render 'form' %>
+    <div class="form-group col-md-6">
+      <%= link_to 'Voltar', questions_path, class: 'btn btn-primary pull-right white' %>
+    </div>
+  </div>
+</div>

@@ -3,8 +3,8 @@
     <div class="page-header">
       <h2>Questões!</h2>
       <div class="text-right">
-        <%= link_to raw('<span class="glyphicon glyphicon-plus"></span> Contrato!'),
-                    new_question_path, class: 'btn btn-primary' %>
+        <%= link_to raw('<span class="glyphicon glyphicon-plus"></span> Questão!'),
+                    new_question_path, class: 'btn btn-primary white' %>
       </div>
     </div>
     <div class="portlet-content row">
@@ -16,7 +16,7 @@
               <th>Descrição</th>
               <th>Resposta Certa!</th>
               <th>Assunto</th>
-              <th colspan="2">Opções</th>
+              <th colspan="3">Opções</th>
             </tr>
             </thead>
 
@@ -26,10 +26,12 @@
                   <td><%= question.description %></td>
                   <td><%= question.correct_answer.title unless question.correct_answer.blank? %></td>
                   <td><%= question.subject.title %></td>
-                  <td><%= link_to 'Show', question, class: 'btn btn-primary center-block' %></td>
-                  <td><%= link_to 'Edit', edit_question_path(question), class: 'btn btn-primary center-block' %></td>
-                  <td><%= link_to 'Destroy', question, method: :delete,
-                                  data: { confirm: 'Are you sure?' }, class: 'btn btn-primary center-block' %></td>
+                  <td><%= link_to 'Exibir', question, class: 'btn btn-primary center-block' %></td>
+                  <td><%= link_to 'Alterar', edit_question_path(question),
+                                  class: 'btn btn-primary center-block' %></td>
+                  <td><%= link_to 'Deletar', question, method: :delete,
+                                  data: { confirm: 'Você tem certeza?' },
+                                  class: 'btn btn-primary center-block' %></td>
                 </tr>
             <% end %>
             </tbody>
