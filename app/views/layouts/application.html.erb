@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-<% unless current_player.blank? %>
-    <%#= render 'layouts/administrator_navbar' %>
+<% if cms_scope? %>
+    <%= render 'layouts/navbar' %>
 <% end %>
 
 <div class="container" id="content">
