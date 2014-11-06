@@ -1,9 +1,31 @@
-<p id="notice"><%= notice %></p>
+<h2>Visualizando assunto n°: <%= params[:id] %> </h2> <br />
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="portlet-content">
+      <% unless notice.blank? %>
+          <div class="alert alert-success alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <strong>Hey!</strong> Parabéns você cadastrou uma assunto com sucesso!
+          </div>
+      <% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @subject.title %>
-</p>
+      <p>
+        <strong>Title:</strong>
+        <%= @subject.title %>
+      </p>
 
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
+      <p>
+        <strong>Assunto:</strong>
+        <%= @subject.title %>
+      </p>
+    </div>
+    <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Alterar'),
+                edit_subject_path(@subject), class: 'btn btn-warning white' %>
+
+    <%= link_to raw('<span class="glyphicon glyphicon-arrow-left"></span> Voltar'),
+                subjects_path, class: 'btn btn-primary pull-right white' %>
+  </div>
+</div>
