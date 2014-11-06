@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104023058) do
+ActiveRecord::Schema.define(version: 20141106223109) do
 
   create_table "answers", force: true do |t|
     t.integer  "answers_id"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(version: 20141104023058) do
   add_index "answers", ["answers_id"], name: "index_answers_on_answers_id", using: :btree
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
   add_index "answers", ["subject_id"], name: "index_answers_on_subject_id", using: :btree
+
+  create_table "answers_questions", id: false, force: true do |t|
+    t.integer "question_id"
+    t.integer "answer_id"
+  end
 
   create_table "authorizations", force: true do |t|
     t.string   "provider"
