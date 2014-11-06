@@ -1,9 +1,9 @@
 <% if current_player.blank? %>
     <h1>Olá! Faça login :D</h1>
+    <%= link_to 'Clique aqui!!', entrar_path %>
 <% else %>
     <h1>Welcomeee Guardian: <%= current_player.name %></h1>
 
-    <%= link_to 'Questões', questions_path %> <br />
-    <%= link_to 'Respostas', answers_path %> <br />
-    <%= link_to 'Integrar', juntar_path %>
+    Aqui irão aparecer os links de ranking e jogar!
+
 <% end %>
