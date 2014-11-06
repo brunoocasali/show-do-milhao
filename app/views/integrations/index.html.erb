@@ -5,22 +5,18 @@
     <div class="page-header">
       <h1>Junte tudo!</h1>
       <%= form_tag juntar_path do %>
-          <span class="text-info">
-            Começe escolhendo o assunto:
-          </span>
+          <span class="text-info"> Começe escolhendo o assunto: </span>
           <%= select_tag :subject_id,
                          options_from_collection_for_select(@subjects, :id, :title, params[:subject_id]),
                          include_blank: true, class: 'form-control' %>
 
+          <br />
+          <span class="text-info"> Agora selecione a questão: <br /> </span>
+          <%= select_tag :question_id, options_from_collection_for_select(@questions, :id, :description,
+                                                                          params[:question_id]),
+                         include_blank: true, class: 'chosen-select form-control',
+                         :'data-placeholder' => 'Escreva algo para filtrar...' %>
       <% end %>
-      <br />
-        <span class="text-info">
-            Agora selecione a questão: <br />
-        </span>
-      <%= select_tag :question_id, options_from_collection_for_select(@questions, :id, :description,
-                                                                      params[:question_id]),
-                     class: 'chosen-select form-control', :'data-placeholder' => 'Escreva algo
-                     para filtrar...' %>
     </div>
     <div class="portlet-content row">
 
@@ -41,15 +37,17 @@
                 <tr>
                   <td><%= answer.title %></td>
                   <td><%= answer.subject.title %></td>
-                  <td><%= link_to 'Exibir', answer, class: 'btn btn-primary center-block white' %></td>
                   <td>
-                    <%= link_to 'Alterar', edit_answer_path(answer),
-                                class: 'btn btn-primary center-block white' %>
+                    <%= link_to 'Correta', '/juntar/right/%d/%d' % [answer.id, params[:question_id]],
+                                method: :post, class: 'btn btn-success center-block white' %>
                   </td>
                   <td>
-                    <%= link_to 'Deletar', answer, method: :delete,
-                                data: { confirm: 'Tem certeza?' },
-                                class: 'btn btn-danger center-block white' %>
+                    <%= link_to 'Opção', '/juntar/option/%d/%d' % [answer.id, params[:question_id]],
+                                method: :post, class: 'btn btn-primary center-block white' %>
+                  </td>
+                  <td>
+                    <%= link_to 'Desmarcar', '/juntar/drop/%d/%d' % [answer.id, params[:question_id]],
+                                method: :post, class: 'btn btn-danger center-block white' %>
                   </td>
                 </tr>
             <% end %>
@@ -65,6 +63,9 @@
 <script>
     $(function(){
         $('#subject_id').on('change', function() {
+            $('form').submit();
+        });
+        $('.chosen-select').on('change', function() {
             $('form').submit();
         });
     });
