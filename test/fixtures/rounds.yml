@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  worth: 9.99
+  question_id: 
+  quit: 9.99
+  miss: 9.99
+
+two:
+  worth: 9.99
+  question_id: 
+  quit: 9.99
+  miss: 9.99

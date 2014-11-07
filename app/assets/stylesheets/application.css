@@ -11,10 +11,74 @@
  * file per style scope.
  *
  *= require bootstrap
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
 
 .white {
     color: #ffffff !important;
+}
+
+.glyphicon-space {
+    margin-right: 5px;
+}
+.btn-facebook {
+    color: white;
+    background-color: #3b5998;
+    border-color: #355398;
+}
+.btn-facebook:hover {
+    color: white;
+    background-color: #2b4798;
+    border-color: #355398;
+}
+.btn-twitter {
+    color: white;
+    background-color: #00aced;
+    border-color: #03a1ed;
+}
+.btn-twitter:hover {
+    color: white;
+    background-color: #029aed;
+    border-color: #03a1ed;
+}
+
+body {
+    background-image: url('bg.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.center-quiz {
+    padding: 40px 15px;
+    text-align: left;
+    color: #FFF;
+    font-size: 19px;
+}
+.question-quiz {
+    text-align: left;
+}
+.number-quiz h1 {
+    font-size: 40px;
+}
+* {
+    color: #FFF;
+}
+/*#container {*/
+    /*margin: 0px auto;*/
+    /*width: 500px;*/
+    /*height: 375px;*/
+    /*border: 10px #333 solid;*/
+/*}*/
+
+#videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
 }

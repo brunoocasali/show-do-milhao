@@ -40,3 +40,7 @@ gem 'koala'
 
 # Facebook provider.
 gem 'omniauth-twitter'
+
+
+# For Social Media
+gem 'font-awesome-rails'

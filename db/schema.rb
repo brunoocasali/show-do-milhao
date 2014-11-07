@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104023058) do
+ActiveRecord::Schema.define(version: 20141107154510) do
 
   create_table "answers", force: true do |t|
     t.integer  "answers_id"
@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20141104023058) do
 
   create_table "games", force: true do |t|
     t.integer  "player_id"
-    t.decimal  "worth",      precision: 10, scale: 2
-    t.string   "image"
-    t.boolean  "winner",                              default: false
+    t.decimal  "worth",                precision: 10, scale: 2
+    t.integer  "jump",       limit: 1,                          default: 3
+    t.boolean  "winner",                                        default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -78,6 +78,17 @@ ActiveRecord::Schema.define(version: 20141104023058) do
 
   add_index "questions", ["correct_answer_id"], name: "index_questions_on_correct_answer_id", using: :btree
   add_index "questions", ["subject_id"], name: "index_questions_on_subject_id", using: :btree
+
+  create_table "rounds", force: true do |t|
+    t.integer  "question_id"
+    t.decimal  "worth",       precision: 10, scale: 2
+    t.decimal  "quit",        precision: 10, scale: 2
+    t.decimal  "miss",        precision: 10, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rounds", ["question_id"], name: "index_rounds_on_question_id", using: :btree
 
   create_table "subjects", force: true do |t|
     t.string   "title"
