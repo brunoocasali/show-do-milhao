@@ -18,7 +18,9 @@ class IntegrationsController < ApplicationController
 
       'Você deletou com vontade essa questão, isso é que é bonito!'
     elsif type.eql? :option
-      @question.answers << answer
+      @question.answers << answer unless @question.answers.size > 3 or
+                                         @question.answers.include?(answer)
+
       'Mais uma opção uhulll!'
     elsif type.eql? :right
       @question.correct_answer_id = answer.id

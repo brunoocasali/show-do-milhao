@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20141106223109) do
     t.integer "answer_id"
   end
 
+  add_index "answers_questions", ["question_id", "answer_id"], name: "index_answers_questions_on_question_id_and_answer_id", unique: true, using: :btree
+
   create_table "authorizations", force: true do |t|
     t.string   "provider"
     t.string   "uid"
