@@ -3,7 +3,7 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
 
       t.references :player, index: true
-      t.decimal :worth, precision: 10, scale: 2
+      t.decimal :worth, precision: 10, scale: 2, default: 0
       t.integer :jump, limit: 1, default: 3
       t.boolean :winner, default: false
 

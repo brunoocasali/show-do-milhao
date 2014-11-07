@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20141107154510) do
   add_index "questions", ["subject_id"], name: "index_questions_on_subject_id", using: :btree
 
   create_table "rounds", force: true do |t|
+    t.integer  "game_id"
     t.integer  "question_id"
     t.decimal  "worth",       precision: 10, scale: 2
     t.decimal  "quit",        precision: 10, scale: 2
@@ -88,6 +89,7 @@ ActiveRecord::Schema.define(version: 20141107154510) do
     t.datetime "updated_at"
   end
 
+  add_index "rounds", ["game_id"], name: "index_rounds_on_game_id", using: :btree
   add_index "rounds", ["question_id"], name: "index_rounds_on_question_id", using: :btree
 
   create_table "subjects", force: true do |t|

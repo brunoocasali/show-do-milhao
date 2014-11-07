@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   devise_for :players, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
   scope :cms, cms_scope: true do
-    resources :games, :path => 'jogos'
     resources :players, :path => 'jogadores'
     resources :subjects, :path => 'assuntos'
     resources :questions, :path => 'questoes'
@@ -15,6 +14,9 @@ Rails.application.routes.draw do
     get '/' => 'welcome#index'
   end
 
+  resources :games, :path => 'games' do
+    get 'game/:game_id/round/:round_id' => 'rounds#show'
+  end
 
   devise_scope :player do
     get '/cadastrar' => 'devise/registrations#new'

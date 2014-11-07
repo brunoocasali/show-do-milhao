@@ -4,4 +4,5 @@ class Question < ActiveRecord::Base
   belongs_to :subject
 
   scope :has_correct_answer, -> { where.not(correct_answer_id: nil) }
+  scope :has_selectable, -> { has_correct_answer.group('id').order('RAND()') }
 end
