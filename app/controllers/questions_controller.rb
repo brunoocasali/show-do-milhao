@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_player!
+  #before_action :authenticate_player!
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions

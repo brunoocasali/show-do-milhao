@@ -1,5 +1,5 @@
 class IntegrationsController < ApplicationController
-  before_action :authenticate_player!
+  #before_action :authenticate_player!
   before_action :set_question, only: [:update, :index]
 
   def index

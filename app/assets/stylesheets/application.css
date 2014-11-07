@@ -67,9 +67,10 @@
 .number-quiz h1 {
     font-size: 40px;
 }
-* {
+.game-text{
     color: #FFF;
 }
+
 /*#container {*/
     /*margin: 0px auto;*/
     /*width: 500px;*/
