@@ -1,5 +1,5 @@
 class IntegrationsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_player!
   before_action :set_question, only: [:update, :index]
 
   def index
@@ -19,8 +19,8 @@ class IntegrationsController < ApplicationController
 
       'Você deletou com vontade essa questão, isso é que é bonito!'
     elsif type.eql? :option
-      @question.answers << answer unless @question.answers.size > 3 or
-                                         @question.answers.include?(answer)
+      @question.answers << answer #unless @question.answers.size > 3 or
+                                  #      @question.answers.include?(answer)
 
       'Mais uma opção uhulll!'
     elsif type.eql? :right
