@@ -11,18 +11,9 @@ class IntegrationsController < ApplicationController
     answer = Answer.find params[:answer_id]
 
    notice = if type.eql? :drop
-      # case one. Be a option in the relation table.
-      @question.answers.delete(answer) if @question.answers.include?(answer)
-
-      # case two. Be a correct answer.
       @question.update(:correct_answer_id => nil) if @question.correct_answer_id == answer.id
 
       'Você deletou com vontade essa questão, isso é que é bonito!'
-    elsif type.eql? :option
-      @question.answers << answer unless @question.answers.size > 3 or
-                                         @question.answers.include?(answer)
-
-      'Mais uma opção uhulll!'
     elsif type.eql? :right
       @question.correct_answer_id = answer.id
 

@@ -46,17 +46,20 @@
                   <td><%= answer.title %></td>
                   <td><%= answer.subject.title %></td>
                   <% url_params = [answer.id, params[:question_id]] %>
+                  <% correct = @question.correct_answer.eql? answer %>
                   <td>
-                    <%= link_to 'Correta', '/cms/juntar/right/%d/%d' % url_params,  method: :post,
-                                class: 'btn btn-success center-block white' %>
+                    <%= link_to_unless correct, 'Correta', '/cms/juntar/right/%d/%d' %
+                            url_params, class: 'btn btn-success center-block white', method: :post do
+                      link_to 'Já é a correta!', '/cms/juntar/right/%d/%d' % url_params,
+                              class: 'btn btn-success center-block white', disabled: 'disabled'
+                    end %>
                   </td>
                   <td>
-                    <%= link_to 'Opção', '/cms/juntar/option/%d/%d' % url_params, method: :post,
-                                class: 'btn btn-primary center-block white' %>
-                  </td>
-                  <td>
-                    <%= link_to 'Desmarcar', '/cms/juntar/drop/%d/%d' % url_params, method: :post,
-                                class: 'btn btn-danger center-block white' %>
+                    <%= link_to_if correct, 'Desmarcar', '/cms/juntar/drop/%d/%d' % url_params,
+                                   class: 'btn btn-danger center-block white', method: :post do
+                      link_to 'Desmarcar', '/cms/juntar/drop/%d/%d' % url_params, method: :post,
+                              class: 'btn btn-danger center-block white', disabled: 'disabled'
+                    end %>
                   </td>
                 </tr>
             <% end %>
