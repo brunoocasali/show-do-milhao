@@ -40,6 +40,3 @@ gem 'koala'
 
 # Facebook provider.
 gem 'omniauth-twitter'
-
-# Gem do carambinhaa
-gem 'deferred_associations'
