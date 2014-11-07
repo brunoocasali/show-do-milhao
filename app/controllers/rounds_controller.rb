@@ -1,6 +1,6 @@
 class RoundsController < ApplicationController
   before_action :authenticate_player!
-  before_action :set_round, only: [:show, :edit, :update, :destroy]
+  before_action :set_round, only: [:show, :next]
 
   # GET /questions/1
   # GET /questions/1.json
@@ -8,6 +8,8 @@ class RoundsController < ApplicationController
   end
 
   def next
+    @round.answer = Answer.find params[:answer_id]
+
     if @round.answer.eql? @round.question.correct_answer
 
       @round.game.worth = @round.worth

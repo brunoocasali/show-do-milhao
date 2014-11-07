@@ -44,7 +44,7 @@
     border-color: #03a1ed;
 }
 
-body {
+.backgr {
     background-image: url('bg.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;

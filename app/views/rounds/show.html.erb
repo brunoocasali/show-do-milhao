@@ -1,7 +1,6 @@
 <div class="container">
   <div class="center-quiz number-quiz">
-    <h1 align="center"><img src="img/showlogo.png" alt="Show do Milhão" /></h1>
-    <audio src="snd/trilhaSonora.mp3" preload="auto" autoplay loop></audio>
+    <%= render 'welcome/resource' %>
     <h1 align="center">Vamos as perguntas!</h1>
     <br />
     <div class="row">
@@ -44,8 +43,6 @@
     </div>
   </div>
   <!-- /.center-quiz .number-quiz -->
-
-</div>
 </div>
 <!-- /.container -->
 <script>
@@ -61,9 +58,3 @@
         // do something
     }
 </script>
-
-Quando confirmado, um formulario sairá daqui como post para a ação #next
-E se for um pula, vai para ação #jump também como post.
-
-Nessas ações será verificado o que foi apostado se ele acertou ou não.
-E então redirecionado para outra ação "round#show" ou senão para games#end (mostrando o ranking)

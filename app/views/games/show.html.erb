@@ -1,24 +1,36 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Player:</strong>
-  <%= @game.player.name %>
-</p>
+<div class="container">
+  <div class="center-quiz">
+    <br />
+    <h1 align="center">Seu prêmio foi de <%= number_to_currency @game.worth %></h1>
+    <h3 align="center">Em barras de ouro que valem mais que dinheiro!!!</h3>
+    <% image_tag('goldbar.png', alt: 'BARRAS DE OUROO BITCHOO!!',
+                 class: 'img-responsive center-block', width: '200px') %>
+    <br />
+    <br />
+    <p id="notice"><%= notice %></p>
+    <h1 align="center">Ranking</h1>
+    <br />
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Jogador</th>
+          <th>Prêmio</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @games.each do |game| %>
+            <tr>
+              <td><%= game.player.name %></td>
+              <td><%= number_to_currency game.worth %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- /.center-quiz .number-quiz -->
 
-<p>
-  <strong>Worth:</strong>
-  <%= @game.worth %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @game.image %>
-</p>
-
-<p>
-  <strong>Winner:</strong>
-  <%= @game.winner %>
-</p>
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+</div>
+<!-- /.container -->

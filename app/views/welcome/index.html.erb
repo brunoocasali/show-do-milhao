@@ -8,34 +8,24 @@
     </div>
 <% end %>
 
-<audio src="trilhaSonora.mp3" preload="auto" autoplay loop></audio>
-
-<%# if current_player.blank? %>
-<!--<h1>Olá! Faça login :D</h1>-->
-<%#= link_to 'Clique aqui!!', entrar_path %>
-<%# else %>
-<!--<h1>Welcomeee Guardian: <%#= current_player.name %></h1>-->
-
-<%# end %>
-
 <div class="container">
   <div class="center-quiz">
-    <div class="form-group col-md-12">
-      <div class="col-md-offset-3 col-md-6">
-        <%= image_tag('showlogo.png', alt: 'Show do Milhão!') %>
-      </div>
-    </div>
+    <% if cms_scope? %>
+        <h1>Aqui, é onde você vai mecher!! AHEAUEHUAEHUAEHUE.</h1>
+    <% else %>
+        <%= render 'resource' %>
+        <div class="col-md-12">
+          <h1 align="center">Você quer ser um milionário?...</h1>
 
-    <div class="col-md-12">
-      <h1 align="center">Você está preparado? Então...</h1>
-
-      <% if current_player.blank? %>
-          <h4 align="center">Primeiro entre com alguma rede social!</h4>
-          <%= render 'devise/shared/links' %>
-      <% else %>
-          <%= link_to 'Quero ser um milionário!', new_game_path, class: 'btn btn-success btn-lg' %>
-      <% end %>
-    </div>
+          <% if current_player.blank? %>
+              <h4 align="center">Primeiro entre com alguma rede social!</h4>
+              <%= render 'devise/shared/links' %>
+          <% else %>
+              <%= link_to 'SIM eu QUERO ser um milionário!', new_game_path,
+                          class: 'btn btn-success btn-lg center-block' %>
+          <% end %>
+        </div>
+    <% end %>
   </div>
 
 </div>
