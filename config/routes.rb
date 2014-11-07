@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     post 'juntar' => 'integrations#index'
     get 'juntar' => 'integrations#index'
 
-    post 'cms/juntar/:type/:correct_answer_id/:question_id' => 'integrations#update'
+    post 'juntar/:type/:answer_id/:question_id' => 'integrations#update'
     get '/' => 'welcome#index'
   end
 

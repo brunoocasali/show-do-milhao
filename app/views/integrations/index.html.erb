@@ -3,6 +3,15 @@
 <div class="col-md-12 col-md-offset-0">
   <div class="portlet">
     <div class="page-header">
+      <% if notice %>
+          <div class="alert alert-warning alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <strong>ATENÇÃO: </strong> <%= notice %>
+          </div>
+      <% end %>
       <h1>Junte tudo!</h1>
       <%= form_tag juntar_path do %>
           <span class="text-info"> Começe escolhendo o assunto: </span>
@@ -19,7 +28,6 @@
       <% end %>
     </div>
     <div class="portlet-content row">
-
       <div class="col-md-12">
         <h3>Respostas</h3>
         <div class="table-responsive">
@@ -37,17 +45,18 @@
                 <tr>
                   <td><%= answer.title %></td>
                   <td><%= answer.subject.title %></td>
+                  <% url_params = [answer.id, params[:question_id]] %>
                   <td>
-                    <%= link_to 'Correta', '/juntar/right/%d/%d' % [answer.id, params[:question_id]],
-                                method: :post, class: 'btn btn-success center-block white' %>
+                    <%= link_to 'Correta', '/cms/juntar/right/%d/%d' % url_params,  method: :post,
+                                class: 'btn btn-success center-block white' %>
                   </td>
                   <td>
-                    <%= link_to 'Opção', '/juntar/option/%d/%d' % [answer.id, params[:question_id]],
-                                method: :post, class: 'btn btn-primary center-block white' %>
+                    <%= link_to 'Opção', '/cms/juntar/option/%d/%d' % url_params, method: :post,
+                                class: 'btn btn-primary center-block white' %>
                   </td>
                   <td>
-                    <%= link_to 'Desmarcar', '/juntar/drop/%d/%d' % [answer.id, params[:question_id]],
-                                method: :post, class: 'btn btn-danger center-block white' %>
+                    <%= link_to 'Desmarcar', '/cms/juntar/drop/%d/%d' % url_params, method: :post,
+                                class: 'btn btn-danger center-block white' %>
                   </td>
                 </tr>
             <% end %>

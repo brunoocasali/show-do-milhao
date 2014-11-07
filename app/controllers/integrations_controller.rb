@@ -1,22 +1,35 @@
 class IntegrationsController < ApplicationController
-  before_action :set_question, only: :update
+  before_action :set_question, only: [:update, :index]
 
   def index
     set_objects
   end
 
   def update
-    type = params[:type]
+    type = params[:type].to_sym
+    answer = Answer.find params[:answer_id]
 
-    if type.eql? 'drop'
-      @question.update(integration_params)
-    elsif type.eql? ''
-      @question.update(integration_params)
-    else
-      @question.update(integration_params)
+   notice = if type.eql? :drop
+      # case one. Be a option in the relation table.
+      @question.answers.delete(answer) if @question.answers.include?(answer)
+
+      # case two. Be a correct answer.
+      @question.update(:correct_answer_id => nil) if @question.correct_answer_id == answer.id
+
+      'Você deletou com vontade essa questão, isso é que é bonito!'
+    elsif type.eql? :option
+      @question.answers << answer
+      'Mais uma opção uhulll!'
+    elsif type.eql? :right
+      @question.correct_answer_id = answer.id
+
+      @question.save
+      'Essa é agora uma resposta certa!!'
     end
 
-    render :index
+    respond_to do |format|
+      format.html { redirect_to :back, notice: notice, subject_id: params[:subject_id] }
+    end
   end
 
   private
@@ -31,10 +44,6 @@ class IntegrationsController < ApplicationController
   end
 
   def set_question
-    @question = Question.find(params[:question_id])
-  end
-
-  def integration_params
-    params.require(:user).permit(:correct_answer_id)
+    @question = Question.find_by(:id => params[:question_id])
   end
 end
