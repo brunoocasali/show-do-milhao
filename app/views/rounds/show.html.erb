@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="center-quiz number-quiz">
+    <h1 align="center"><img src="img/showlogo.png" alt="Show do Milhão" /></h1>
+    <audio src="snd/trilhaSonora.mp3" preload="auto" autoplay loop></audio>
+    <h1 align="center">Vamos as perguntas!</h1>
+    <br />
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="media">
+          <h2 class="media-left"> Valendo: <%= number_to_currency @round.worth %></h2>
+          <br />
+          <div class="media-body question-quiz text-small"> <%= @round.question.description %></div>
+        </div>
+        <br />
+        <%= form_for(@round, url: { controller: :rounds,
+                                    action: :next,
+                                    method: :patch }, html: {role: 'form'}) do |f| %>
+
+            <% the_answers(@round).each do |answer| %>
+                <%= f.radio_button(:answer_id, answer.id) %>
+                <%= f.label :answer_id, answer.title %>
+                <br />
+            <% end %>
+
+            <% if @round.errors.any? %>
+                <div id="error_explanation">
+                  <h2>Você errou AHAHHAHAHAHAHA:</h2>
+                  <ul>
+                    <% @round.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+                <%= link_to 'Ranking!!!', game_path(@round.game),
+                            class: 'btn btn-success center-block' %>
+            <% else %>
+                <%= f.submit 'Confirmar!', class: 'btn btn-primary center-block' %>
+            <% end %>
+        <% end %>
+      </div>
+      <div class="col-lg-6">
+        <video autoplay id="videoElement" class="img-rounded"></video>
+      </div>
+    </div>
+  </div>
+  <!-- /.center-quiz .number-quiz -->
+
+</div>
+</div>
+<!-- /.container -->
+<script>
+    var video = document.querySelector("#videoElement");
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+    if (navigator.getUserMedia) {
+        navigator.getUserMedia({video: true}, handleVideo, videoError);
+    }
+    function handleVideo(stream) {
+        video.src = window.URL.createObjectURL(stream);
+    }
+    function videoError(e) {
+        // do something
+    }
+</script>
+
+Quando confirmado, um formulario sairá daqui como post para a ação #next
+E se for um pula, vai para ação #jump também como post.
+
+Nessas ações será verificado o que foi apostado se ele acertou ou não.
+E então redirecionado para outra ação "round#show" ou senão para games#end (mostrando o ranking)

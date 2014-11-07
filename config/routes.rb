@@ -14,8 +14,14 @@ Rails.application.routes.draw do
     get '/' => 'welcome#index'
   end
 
-  resources :games, :path => 'games' do
-    get 'game/:game_id/round/:round_id' => 'rounds#show'
+  resources :rounds
+
+  resources :games do
+    resources :rounds do
+      member do
+        patch 'next'
+      end
+    end
   end
 
   devise_scope :player do

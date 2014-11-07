@@ -33,8 +33,7 @@
           <h4 align="center">Primeiro entre com alguma rede social!</h4>
           <%= render 'devise/shared/links' %>
       <% else %>
-          <%= button_to 'Quero ser um milionário!', :back, class: 'btn btn-success btn-lg
-        center-block' %>
+          <%= link_to 'Quero ser um milionário!', new_game_path, class: 'btn btn-success btn-lg' %>
       <% end %>
     </div>
   </div>

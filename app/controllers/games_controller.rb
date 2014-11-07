@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_player!
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
   # GET /games
@@ -15,7 +15,8 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new
+    @game = Game.create(player: current_player)
+    redirect_to game_round_path(@game, @game.rounds.first)
   end
 
   # GET /games/1/edit
