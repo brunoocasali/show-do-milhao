@@ -22,15 +22,18 @@
             <% @subjects.each do |subject| %>
                 <tr>
                   <td><%= subject.title %></td>
-                  <td><%= link_to 'Exibir', subject, class: 'btn btn-primary center-block white' %></td>
+                  <td>
+                    <%= link_to 'Exibir', subject,
+                                class: 'btn btn-primary btn-sm center-block white' %>
+                  </td>
                   <td>
                     <%= link_to 'Alterar', edit_subject_path(subject),
-                                class: 'btn btn-primary center-block white' %>
+                                class: 'btn btn-primary btn-sm center-block white' %>
                   </td>
                   <td>
                     <%= link_to 'Deletar', subject, method: :delete,
                                 data: { confirm: 'Tem certeza?' },
-                                class: 'btn btn-danger center-block white' %>
+                                class: 'btn btn-danger btn-sm center-block white' %>
                   </td>
                 </tr>
             <% end %>

@@ -8,7 +8,7 @@ class RoundsController < ApplicationController
   end
 
   def next
-    @round.answer = Answer.find params[:answer_id]
+    @round.answer = Answer.find params[:round][:answer_id]
 
     if @round.answer.eql? @round.question.correct_answer
 

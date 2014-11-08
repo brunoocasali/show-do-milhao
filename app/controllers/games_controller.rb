@@ -15,7 +15,9 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.create(player: current_player)
+    #@game = Game.create(player: current_player)
+    player = Player.find(2)
+    @game = Game.create(player: player)
     redirect_to game_round_path(@game, @game.rounds.first)
   end
 
