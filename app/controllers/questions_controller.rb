@@ -31,7 +31,13 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
-    params[:question][:answers_attributes].map { |k, v| @question.answers.update(title: v['title']) }
+    params[:question][:answers_attributes].map do |k, v|
+      if @question.correct_answer_id.eql? k.to_i
+        @question.correct_answer = Answer.create(title: v['title'])
+      else
+        @question.answers.create(title: v['title'])
+      end
+    end
 
     respond_to do |format|
       if @question.save
