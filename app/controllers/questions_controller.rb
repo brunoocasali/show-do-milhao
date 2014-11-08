@@ -17,10 +17,13 @@ class QuestionsController < ApplicationController
   def new
     @question = Question.new
     @subjects = Subject.all
+
+    4.times { @question.answers.new }
   end
 
   # GET /questions/1/edit
   def edit
+
     @subjects = Subject.all
   end
 
@@ -28,6 +31,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
+    params[:question][:answers_attributes].map { |k, v| @question.answers.update(title: v['title']) }
 
     respond_to do |format|
       if @question.save
@@ -45,6 +49,11 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
+
+        params[:question][:answers_attributes].map do |k, v|
+          @question.answers.update(title: v['title'])
+        end
+
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
@@ -65,13 +74,13 @@ class QuestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def question_params
-      params.require(:question).permit(:description, :correct_answer_id, :answer_id, :subject_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def question_params
+    params.require(:question).permit(:description, :correct_answer_id, :subject_id)
+  end
 end
