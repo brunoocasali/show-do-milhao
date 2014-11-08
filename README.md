@@ -14,8 +14,11 @@ Instruções
 **Partindo do princípio que você tenha o rails devidamente instalado.
 
 Baixe o repositório: `git clone git@github.com:Unisep/show-do-milhao.git`
+
 Acesse-o: `cd show-do-milhao`
+
 Atualize as dependências: `bundle install`
+
 Crie o banco: `rake db:setup`
 
 Chame o servidor WebRick: `rails server` 
