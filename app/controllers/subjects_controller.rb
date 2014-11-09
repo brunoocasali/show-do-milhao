@@ -1,5 +1,5 @@
 class SubjectsController < ApplicationController
-  #before_action :authenticate_player!
+  before_action :authenticate_player!
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
   # GET /subjects

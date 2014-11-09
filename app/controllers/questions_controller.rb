@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  #before_action :authenticate_player!
+  before_action :authenticate_player!
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions
@@ -23,7 +23,6 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
-
     @subjects = Subject.all
   end
 
@@ -39,33 +38,25 @@ class QuestionsController < ApplicationController
       end
     end
 
-    respond_to do |format|
-      if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
-        format.json { render :show, status: :created, location: @question }
-      else
-        format.html { render :new }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
-      end
+    if @question.save
+      redirect_to @question, notice: 'Question was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
-    respond_to do |format|
-      if @question.update(question_params)
+    if @question.update(question_params)
 
-        params[:question][:answers_attributes].map do |k, v|
-          @question.answers.update(title: v['title'])
-        end
-
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
-        format.json { render :show, status: :ok, location: @question }
-      else
-        format.html { render :edit }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
+      params[:question][:answers_attributes].map do |k, v|
+        @question.answers.update(title: v['title'])
       end
+
+      redirect_to @question, notice: 'Question was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -73,10 +64,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1.json
   def destroy
     @question.destroy
-    respond_to do |format|
-      format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to questions_url, notice: 'Question was successfully destroyed.'
   end
 
   private

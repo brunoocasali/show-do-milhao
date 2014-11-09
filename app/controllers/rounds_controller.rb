@@ -1,5 +1,5 @@
 class RoundsController < ApplicationController
-  #before_action :authenticate_player!
+  before_action :authenticate_player!
   before_action :set_round, only: [:show, :next]
 
   # GET /questions/1

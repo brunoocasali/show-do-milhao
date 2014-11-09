@@ -1,7 +1,5 @@
 class Player < ActiveRecord::Base
-  devise :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
-
-  validates_presence_of :email
+  devise :rememberable, :trackable, :validatable, :omniauthable
 
   has_many :authorizations, dependent: :destroy
   has_many :games, dependent: :destroy
@@ -28,19 +26,18 @@ class Player < ActiveRecord::Base
                                         :secret => auth.credentials.secret).first_or_initialize
     if authorization.player.blank?
 
-      #The Twitter provider doesn't gives me the email.
+      # The Twitter provider doesn't gives me the email.
       mail = (auth.provider.eql? 'twitter') ? auth.uid + '@twitter.com' : auth.info.email
 
       player = current_user.nil? ? Player.where('email = ?', mail).first : current_user
       if player.blank?
         player = Player.new
-        player.password = Devise.friendly_token[0, 20]
         player.name = auth.info.name
         player.email = mail
         player.save!
       end
 
-      authorization.username = auth.info.nickname
+      authorization.username = auth.info.name
       authorization.player_id = player.id
       authorization.save
     end
