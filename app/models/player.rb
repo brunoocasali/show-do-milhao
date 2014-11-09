@@ -32,6 +32,7 @@ class Player < ActiveRecord::Base
       player = current_user.nil? ? Player.where('email = ?', mail).first : current_user
       if player.blank?
         player = Player.new
+        player.password = Devise.friendly_token[0, 20]
         player.name = auth.info.name
         player.email = mail
         player.save!

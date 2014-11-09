@@ -26,5 +26,12 @@ Rails.application.routes.draw do
     end
   end
 
+  devise_scope :player do
+    get '/cadastrar' => 'devise/registrations#new'
+    get '/entrar' => 'devise/sessions#new'
+    get '/editar' => 'devise/registrations#edit'
+    delete '/sair' => 'devise/sessions#destroy'
+  end
+
   root 'welcome#index'
 end
