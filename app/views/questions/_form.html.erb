@@ -34,12 +34,12 @@
         <hr />
       </div>
 
-      <% @question.answers.each_with_index do |answer, i| %>
+      <% @question.answers.each do |answer| %>
           <%= question.fields_for :answers, answer do |answer_fields| %>
               <div class="form-group col-md-12">
                 <div class="input-group">
                   <span class="input-group-addon">
-                    <%= question.radio_button :correct_answer_id, i %>
+                    <%= answer_fields.radio_button :is_correct, true %>
                   </span>
                   <%= answer_fields.text_field :title, placeholder: 'Título da resposta',
                                                class: 'form-control' %>

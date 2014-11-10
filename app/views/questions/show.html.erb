@@ -26,6 +26,14 @@
         <strong>Assunto:</strong>
         <%= @question.subject.title %>
       </p>
+
+      <% @question.answers.each do |answer| %>
+          <li>
+            <strong>Título:</strong>
+            <%= answer.title %>
+          </li>
+      <% end %>
+
     </div>
     <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Alterar'),
                 edit_question_path(@question), class: 'btn btn-warning white' %>
