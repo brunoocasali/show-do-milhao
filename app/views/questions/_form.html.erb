@@ -34,18 +34,8 @@
         <hr />
       </div>
 
-      <% @question.answers.each do |answer| %>
-          <%= question.fields_for :answers, answer do |answer_fields| %>
-              <div class="form-group col-md-12">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <%= answer_fields.radio_button :is_correct, true %>
-                  </span>
-                  <%= answer_fields.text_field :title, placeholder: 'Título da resposta',
-                                               class: 'form-control' %>
-                </div>
-              </div>
-          <% end %>
+      <%= question.fields_for :answers do |builder| %>
+          <%= render 'answers', f: builder %>
       <% end %>
 
       <div class="form-group col-md-6">

@@ -17,15 +17,14 @@ class QuestionsController < ApplicationController
 
   def edit
     @subjects = Subject.all
-    counter = @question.answers.count
-    if counter < 4
-      (4 - counter).times { @question.answers.build }
-    end
+    # counter = @question.answers.count
+    # if counter < 4
+    #   (4 - counter).times { @question.answers.build }
+    # end
   end
 
   def create
     @question = Question.new(question_params)
-
     if @question.save
       redirect_to @question, notice: 'Parabéns, questão cadastrada com a devida maestria!!'
     else
@@ -34,7 +33,7 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    if @question.update(question_params* 4)
+    if @question.update(question_params)
       redirect_to @question, notice: 'Question was successfully updated.'
     else
       render :edit
@@ -55,6 +54,7 @@ class QuestionsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def question_params
-    params.require(:question).permit(:description, :subject_id, :answers_attributes)
+    params.require(:question).permit(:description, :subject_id,
+                                     answers_attributes: [:title, :id, :is_correct])
   end
 end
