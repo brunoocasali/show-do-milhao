@@ -1,7 +1,7 @@
 <div class="form-group col-md-12">
   <div class="input-group">
     <span class="input-group-addon">
-       <%= f.radio_button :is_correct, true %>
+       <%= radio_button_tag 'is_correct', true, :is_correct %>
     </span>
     <%= f.text_field :title, placeholder: 'Título da resposta', class: 'form-control' %>
   </div>
