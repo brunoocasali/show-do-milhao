@@ -34,8 +34,20 @@
         <hr />
       </div>
 
+      <% counter ||= 0 %>
       <%= question.fields_for :answers do |builder| %>
-          <%= render 'answers', f: builder %>
+          <% if counter == 0 %>
+              <%= builder.hidden_field :is_correct, value: true %>
+              <div class="form-group col-md-12 has-success">
+                <%= builder.text_field :title, placeholder: 'RESPOSTA CERTA',
+                                       class: 'form-control' %>
+              </div>
+          <% else %>
+              <div class="form-group col-md-12">
+                <%= builder.text_field :title, placeholder: 'Título da resposta', class: 'form-control' %>
+              </div>
+          <% end %>
+          <% counter += 1 %>
       <% end %>
 
       <div class="form-group col-md-6">
