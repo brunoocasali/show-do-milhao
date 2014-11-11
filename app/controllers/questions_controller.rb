@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_player!
+  #before_action :authenticate_player!
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -26,11 +26,6 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
 
-    params[:question][:answers_attributes].map do |k, v|
-      @question.answers << Answer.new(title: v[:title], question_id: @question.id,
-                                      is_correct: v[:is_correct])
-    end
-
     if @question.save
       redirect_to @question, notice: 'Parabéns, questão cadastrada com a devida maestria!!'
     else
@@ -39,11 +34,7 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    #.map do |k, v|
-      @question.answers.update(params[:question][:answers_attributes])
-    #end
-
-    if @question.update(question_params)
+    if @question.update(question_params* 4)
       redirect_to @question, notice: 'Question was successfully updated.'
     else
       render :edit
@@ -64,6 +55,6 @@ class QuestionsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def question_params
-    params.require(:question).permit(:description, :subject_id)
+    params.require(:question).permit(:description, :subject_id, :answers_attributes)
   end
 end
