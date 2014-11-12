@@ -12,13 +12,17 @@ end
 group :production do
   # The robust relational database
   gem 'pg'
-  # More than simple connections on your app! Thin!
-  gem 'thin'
 end
+
+# More than simple connections on your app! Thin!
+#gem 'thin'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 

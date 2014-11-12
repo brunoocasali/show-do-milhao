@@ -24,7 +24,7 @@ Devise.setup do |config|
 
   config.sign_out_via = :get
 
-  config.omniauth :facebook, '388088214678210', 'a152dedb6a824fbecbae4c08b80ad254',
+  config.omniauth :facebook, '873747422659195', '27e73a8c1495ddeb25459434784bb515',
                   {scope: 'email, offline_access', provider_ignores_state: true,
                    client_options: {ssl: {ca_file: '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 

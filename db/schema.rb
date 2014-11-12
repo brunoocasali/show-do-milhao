@@ -11,19 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112122652) do
+ActiveRecord::Schema.define(version: 20141107154510) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
-    t.integer  "subject_id"
     t.string   "title",       limit: 400
+    t.boolean  "is_correct",              default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_correct"
   end
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
-  add_index "answers", ["subject_id"], name: "index_answers_on_subject_id", using: :btree
 
   create_table "authorizations", force: true do |t|
     t.string   "provider"
@@ -41,9 +39,9 @@ ActiveRecord::Schema.define(version: 20141112122652) do
     t.decimal  "worth",                precision: 10, scale: 2, default: 0.0
     t.integer  "jump",       limit: 1,                          default: 3
     t.boolean  "winner",                                        default: false
+    t.boolean  "finished",                                      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "finished",                                      default: false
   end
 
   add_index "games", ["player_id"], name: "index_games_on_player_id", using: :btree
@@ -66,12 +64,14 @@ ActiveRecord::Schema.define(version: 20141112122652) do
   add_index "players", ["email"], name: "index_players_on_email", unique: true, using: :btree
 
   create_table "questions", force: true do |t|
-    t.text     "description"
+    t.integer  "correct_answer_id"
     t.integer  "subject_id"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "questions", ["correct_answer_id"], name: "index_questions_on_correct_answer_id", using: :btree
   add_index "questions", ["subject_id"], name: "index_questions_on_subject_id", using: :btree
 
   create_table "rounds", force: true do |t|
