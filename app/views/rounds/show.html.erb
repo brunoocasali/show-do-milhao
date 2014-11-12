@@ -17,23 +17,22 @@
 
             <% the_answers(@round).each do |answer| %>
                 <%= f.radio_button(:answer_id, answer.id) %>
-                <%= f.label :answer_id, answer.title %>
+                <span><%= f.label :answer_id, answer.title %></span>
                 <br />
             <% end %>
 
-            <% if @round.errors.any? %>
-                <div id="error_explanation">
-                  <h2>Você errou AHAHHAHAHAHAHA:</h2>
-                  <ul>
-                    <% @round.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                  </ul>
+            <% if notice.blank? %>
+                <%= f.submit 'Confirmar!', class: 'btn btn-primary center-block' %>
+            <% else %>
+                <div class="alert alert-warning alert-dismissible fade in text-center" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                  </button>
+                  <strong>ATENÇÃO: </strong> <%= notice %>
                 </div>
                 <%= link_to 'Ranking!!!', game_path(@round.game),
                             class: 'btn btn-success center-block' %>
-            <% else %>
-                <%= f.submit 'Confirmar!', class: 'btn btn-primary center-block' %>
             <% end %>
         <% end %>
       </div>

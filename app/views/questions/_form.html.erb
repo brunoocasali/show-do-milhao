@@ -40,7 +40,7 @@
               <%= builder.hidden_field :is_correct, value: true %>
               <div class="form-group col-md-12 has-success">
                 <%= builder.text_field :title, placeholder: 'RESPOSTA CERTA',
-                                       class: 'form-control' %>
+                                       class: 'form-control', required: true %>
               </div>
           <% else %>
               <div class="form-group col-md-12">

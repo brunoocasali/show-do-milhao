@@ -17,10 +17,10 @@ class QuestionsController < ApplicationController
 
   def edit
     @subjects = Subject.all
-    # counter = @question.answers.count
-    # if counter < 4
-    #   (4 - counter).times { @question.answers.build }
-    # end
+    counter = @question.answers.count
+    if counter < 4
+      (4 - counter).times { @question.answers.build }
+    end
   end
 
   def create

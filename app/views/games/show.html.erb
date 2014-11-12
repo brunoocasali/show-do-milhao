@@ -1,6 +1,7 @@
 
 <div class="container">
   <div class="center-quiz">
+    <%= render 'welcome/resource' %>
     <br />
     <h1 align="center">Seu prêmio foi de <%= number_to_currency @game.worth %></h1>
     <h3 align="center">Em barras de ouro que valem mais que dinheiro!!!</h3>
@@ -8,7 +9,17 @@
                  class: 'img-responsive center-block', width: '200px') %>
     <br />
     <br />
-    <p id="notice"><%= notice %></p>
+
+    <% if notice %>
+        <div class="alert alert-success alert-dismissible fade in text-center" role="alert">
+          <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <strong>ATENÇÃO: </strong> <%= notice %>
+        </div>
+    <% end %>
+
     <h1 align="center">Ranking</h1>
     <br />
     <div class="table-responsive">

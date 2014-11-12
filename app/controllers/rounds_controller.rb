@@ -9,25 +9,28 @@ class RoundsController < ApplicationController
 
   def next
     @round.answer = Answer.find params[:round][:answer_id]
+    @game = @round.game
 
     if @round.answer.eql? @round.question.correct_answer
 
       @round.game.worth = @round.worth
 
       if @round.worth >= 1_000_000
-        @round.game.winner = true
+        @game.update(winner: true)
+        @round.update(round_params)
         redirect_to game_path(@round.game)
       else
+        @round.update(round_params)
         @round.id += 1
+        redirect_to game_round_path(@round.game, @round), notice: nil
       end
     else # loser
-      @round.game.worth = @round.miss
-
-      @round.errors.add(:base, "A Resposta certa era:
-                                                  <b>#{@round.question.correct_answer.title}</b>")
+      @game.update(winner: false, worth: @round.miss)
+      notice = "A Resposta certa era: #{@round.question.correct_answer.title}"
+      @round.update(round_params)
+      redirect_to game_path(@round.game), notice: notice
     end
 
-    redirect_to game_round_path(@round.game, @round)
   end
 
   private

@@ -1,21 +1,15 @@
 class Game < ActiveRecord::Base
   belongs_to :player
-  has_many :rounds, dependent: :delete_all
+  has_many :rounds, dependent: :delete_all, autosave: true
 
   validates_presence_of :player
-  validate :only_with_sufficient_questions, on: :create
   after_create :create_rounds
 
-  def only_with_sufficient_questions
-    if Question.has_correct_answer.count < 16
-      errors.add(:base, 'Você precisa cadastrar mais do que 15 questões com RESPOSTAS
-                               CORRETAS para poder começar a jogar!')
-    end
-  end
+  scope :last_games, -> { joins(:player).order('`games`.worth DESC') }
 
   def create_rounds
     # Selecionar de modo aleatório
-    all_shuffled_questions = Question.has_selectable
+    all_shuffled_questions = Question.is_selectable
     first_block = all_shuffled_questions[0..4]
     two_block = all_shuffled_questions[5..9]
     three_block = all_shuffled_questions[10..16]

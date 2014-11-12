@@ -4,7 +4,8 @@ class Question < ActiveRecord::Base
 
   accepts_nested_attributes_for :answers
 
-  scope :has_selectable, -> { group('id').order('RAND()') }
+  scope :is_selectable, -> { includes(:answers).where(:answers => {:is_correct => true}).
+      group('`questions`.id').order('RAND()') }
 
   def correct_answer
     answers.where(is_correct: true).first
