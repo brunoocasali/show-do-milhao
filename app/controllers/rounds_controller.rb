@@ -9,28 +9,28 @@ class RoundsController < ApplicationController
 
   def next
     @round.answer = Answer.find params[:round][:answer_id]
-    @game = @round.game
 
-    if @round.answer.eql? @round.question.correct_answer
-
-      @round.game.worth = @round.worth
-
-      if @round.worth >= 1_000_000
-        @game.update(winner: true)
+    if @round.game.finished?
+      redirect_to game_path(@round.game), notice:
+          'Ei, não adianta voltar já sei que você perdeu AHHAHAHAHAHAHAHHAHA!'
+    else
+      if @round.answer.eql? @round.question.correct_answer
+        if @round.worth >= 1_000_000
+          @round.game.update(winner: true, finished: true, worth: @round.worth)
+          @round.update(round_params)
+          redirect_to game_path(@round.game)
+        else
+          @round.update(round_params)
+          @round.id += 1
+          redirect_to game_round_path(@round.game, @round), notice: nil
+        end
+      else # loser
+        @round.game.update(winner: false, worth: @round.miss, finished: true)
+        notice = "A Resposta certa era: #{@round.question.correct_answer.title}"
         @round.update(round_params)
-        redirect_to game_path(@round.game)
-      else
-        @round.update(round_params)
-        @round.id += 1
-        redirect_to game_round_path(@round.game, @round), notice: nil
+        redirect_to game_path(@round.game), notice: notice
       end
-    else # loser
-      @game.update(winner: false, worth: @round.miss)
-      notice = "A Resposta certa era: #{@round.question.correct_answer.title}"
-      @round.update(round_params)
-      redirect_to game_path(@round.game), notice: notice
     end
-
   end
 
   def jump

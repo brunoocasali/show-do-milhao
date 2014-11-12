@@ -1,9 +1,20 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'mysql2'
+
+# Use mysql as the database for Active Record on Development Environment
+group :development, :test do
+  gem 'mysql2'
+end
+# But for Heroku, mysql as the database for Active Record is not allowed, for that use PostgresSQL
+group :production do
+  # The robust relational database
+  gem 'pg'
+  # More than simple connections on your app! Thin!
+  gem 'thin'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -41,6 +52,8 @@ gem 'koala'
 # Facebook provider.
 gem 'omniauth-twitter'
 
-
 # For Social Media
 gem 'font-awesome-rails'
+
+# Deploy on Heroku
+gem 'heroku'
