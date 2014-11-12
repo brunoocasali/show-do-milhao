@@ -26,13 +26,15 @@
         <strong>Assunto:</strong>
         <%= @question.subject.title %>
       </p>
-
-      <% @question.answers.each do |answer| %>
-          <li>
-            <strong>Título:</strong>
-            <%= answer.title %>
-          </li>
-      <% end %>
+      <% correct = @question.correct_answer.id %>
+      <ul class="list-group">
+        <% @question.answers.each do |answer| %>
+            <a href="#" class="list-group-item <%= 'active' if answer.id.eql? correct %>"
+               title="<%= 'Resposta certa!' if answer.id.eql? correct %>">
+              <%= answer.title %>
+            </a>
+        <% end %>
+      </ul>
 
     </div>
     <%= link_to raw('<span class="glyphicon glyphicon-pencil"></span> Alterar'),
