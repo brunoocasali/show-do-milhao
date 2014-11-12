@@ -1,6 +1,6 @@
 class RoundsController < ApplicationController
   before_action :authenticate_player!
-  before_action :set_round, only: [:show, :next]
+  before_action :set_round, only: [:show, :next, :jump]
 
   # GET /questions/1
   # GET /questions/1.json
@@ -31,6 +31,12 @@ class RoundsController < ApplicationController
       redirect_to game_path(@round.game), notice: notice
     end
 
+  end
+
+  def jump
+    @round.game.update_attributes(jump: @round.game.jump -= 1)
+    @round.id += 1
+    redirect_to game_round_path(@round.game, @round), notice: nil
   end
 
   private

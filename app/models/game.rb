@@ -7,6 +7,10 @@ class Game < ActiveRecord::Base
 
   scope :last_games, -> { joins(:player).order('`games`.worth DESC') }
 
+  def has_jumps?
+    true if jump > 0
+  end
+
   def create_rounds
     # Selecionar de modo aleatório
     all_shuffled_questions = Question.is_selectable

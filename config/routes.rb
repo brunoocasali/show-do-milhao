@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :rounds do
       member do
         patch 'next'
+        patch 'jump'
       end
     end
   end
