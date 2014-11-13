@@ -5,7 +5,7 @@ class Game < ActiveRecord::Base
   validates_presence_of :player
   after_create :create_rounds
 
-  scope :last_games, -> { joins(:player).order('`games`.worth DESC') }
+  scope :last_games, -> { joins(:player).order('games.worth DESC') }
 
   def has_jumps?
     true if jump > 0
